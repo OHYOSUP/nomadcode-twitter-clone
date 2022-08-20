@@ -1,0 +1,67 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+  background-color: #fff;
+}
+#root > header {
+  width: 100vw;
+  height: 8vh;
+  border: 1px solid red;
+  display: flex;
+}
+#root > header > div:nth-child(1) {
+  margin-left: 17vw;
+  width: 12vw;
+  height: 9vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#root > header > ul {
+  width: 25vw;
+  height: 9vh;
+  display: flex;
+  justify-content: space-around;
+  list-style-type: none;
+}
+#root > header > ul > li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 10vw;
+  height: 9vh;
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+#root > header > ul > li::before {
+  content: "▶";
+}
+#root > header > div:nth-child(3) {
+  width: 20vw;
+  height: 9vh;
+  display: flex;
+  justify-content: flex-end;
+}
+#root > header > div:nth-child(3) > div {
+  width: 5vw;
+  height: 8vh;
+  font-weight: 800;
+  border: 1px solid red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#root > header > div:nth-child(4) {
+  width: 10vw;
+  height: 9vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}/*# sourceMappingURL=practice1.css.map */

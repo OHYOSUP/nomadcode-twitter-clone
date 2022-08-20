@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <title>Document</title>
+</head>
+<body>
+  <h1><a href="" style="font-size: 3rem;">WEB</a></h1>
+  <input id="nightDay" type="button" value="night">
+  <ul>
+    <li><a href=""> HTML</a></li>
+    <li><a href=""> CSS</a></li>
+    <li><a href=""> JavaScript</a></li>
+  </ul>
+  <h1>JavaScript</h1>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, ratione nobis asperiores tempore soluta rem voluptas nisi earum sit repellat eligendi incidunt perferendis porro doloribus delectus nesciunt ipsa debitis voluptatibus architecto totam qui et repellendus? Repellendus aliquid eligendi assumenda, ipsa sunt ipsam maxime suscipit vel distinctio quis omnis ducimus odio molestiae ut nostrum modi? Necessitatibus doloremque perspiciatis sequi illum nesciunt facere sapiente magni accusamus eveniet deserunt aliquam voluptate quaerat alias similique veniam dicta nam earum at 
+  ipsa, incidunt placeat! Excepturi.</p>
+
+  <script>
+    const nightDay = document.getElementById('nightDay')
+    
+    nightDay.addEventListener('click',()=>{
+      const target = document.querySelector('body');
+      if(nightDay.value === 'night'){
+        target.style.backgroundColor = 'black';
+        target.style.color = 'white';
+        nightDay.value = 'Day';
+        
+        const alist = document.querySelectorAll('a');
+        
+        for(let i = 0; i < alist.length; i++){
+          alist[i].style.color = 'powderblue';
+          // $('a').css('color', 'red');
+        }
+
+      } else{
+        target.style.backgroundColor = 'white';
+        target.style.color = 'black';
+        nightDay.value = 'night';
+
+        const alist = document.querySelectorAll('a');
+        
+        for(let i = 0; i < alist.length; i++){
+          alist[i].style.color = 'blue';
+        }
+      }
+    })
+
+  </script>
+</body>
+</html>

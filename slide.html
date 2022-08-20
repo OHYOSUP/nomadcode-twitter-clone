@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{margin: 0; padding: 0; box-sizing: border-box;}
+    #root{
+      width: 100vw;
+      height: 100vh;
+
+    }
+ul{
+  width: 300vw;
+  height: 100vh;
+  display: flex;
+  position: relative;
+}
+
+li{
+  width: 100vw;
+  height: 100vh;
+  
+}
+ul>li:nth-child(1){
+  background-color: lightblue;
+}
+ul>li:nth-child(2){
+  background-color: green;
+}
+ul>li:nth-child(3){
+  background-color: salmon;
+}
+
+button{
+  position: absolute;
+}
+#right{
+  right: 0;
+  top: 50vh;
+  width: 5vw;
+  height: 5vh;
+}
+#left{
+  left: 0;
+  top: 50vh;
+  width: 5vw;
+  height: 5vh;
+}
+  </style>
+</head>
+<body>
+  <div id="root">
+    <ul>
+      <li>list-1</li>
+      <li>list-2</li>
+      <li>list-3</li>
+    </ul>
+
+    <button id="right">=></button>
+    <button id="left"><=</button>
+
+  </div>
+</body>
+<script>
+const root = document.getElementById('root');
+const container = document.querySelector('ul');
+const items = document.querySelectorAll('li');
+const rightBtn = document.getElementById('right');
+const leftBtn = document.getElementById('left');
+
+
+
+
+console.log(rightBtn);
+
+let itemWidth = items[1].clientWidth;
+let slideLength = items.length;
+let currSlide = 0;
+
+console.log(slideLength);
+
+
+function moveSlide(num){
+  container.style.left = -num*itemWidth+'px';
+  container.style.transition = '0.5s';
+  currSlide = num;
+}
+
+leftBtn.addEventListener('click', ()=>{
+  if(currSlide !== 0){
+    moveSlide(currSlide-1);
+    console.log(currSlide);
+  }
+})
+
+rightBtn.addEventListener('click', ()=>{
+  if(currSlide !== slideLength-1){
+    moveSlide(currSlide+1);
+    console.log(currSlide);
+
+  }
+})
+</script>
+</html>
