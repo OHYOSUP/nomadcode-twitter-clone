@@ -35,11 +35,22 @@ content = <Article title= 'Welcome' body = 'Welcome, joseph'></Article>
   }
   content = <Article title= {title} body = {body}></Article>
   
-  contextControl = <li><a href = {'/update/' +id} onClick = {event=>{
+  contextControl = <>
+  <li><a href = {'/update/' +id} onClick = {event=>{
     event.preventDefault()
     setMode('UPDATE');
   }}>Update</a></li>
-  
+  <li><input type='button' value = 'Delete' onClick = {()=>{
+    const newTopics = [];
+    for(let i = 0; i<topics.length; i++){
+      if(topics[i].id !== id){
+        newTopics.push(topics[i]);
+      }
+    }
+    setTopics(newTopics);
+    setMode('WELCOME');
+  }}></input></li>
+  </>
 } else if (mode === 'CREATE'){
   
   content = <Create onCreate = {(_title, _body)=>{
@@ -72,6 +83,7 @@ content = <Article title= 'Welcome' body = 'Welcome, joseph'></Article>
       }
     }
     setTopics(newTopics);
+    setMode('READ');
   }}></Update>
 
 
@@ -97,6 +109,7 @@ content = <Article title= 'Welcome' body = 'Welcome, joseph'></Article>
       setMode('CREATE')
      }}>Create</a></li>
      {contextControl}
+
      </ul>
     </div>
   );
