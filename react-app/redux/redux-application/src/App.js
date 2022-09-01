@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import Header from './components/Header';
-import Nav from './components/Nav';
+import NavContainer from './containers/Nav';
 import Article from './components/Article';
 
 
@@ -12,7 +12,7 @@ function App() {
     <div className="App">
       
     <Header></Header>
-    <Nav></Nav>
+    <NavContainer></NavContainer>
     <Article></Article>
     </div>
   );

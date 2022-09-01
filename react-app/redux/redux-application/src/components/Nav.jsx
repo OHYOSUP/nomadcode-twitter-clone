@@ -2,19 +2,20 @@ import React, { Component } from "react";
 
 class Nav extends Component {
   render() {
+    let tags = [];
+    for(let i = 0; i< this.props.data.length; i++){
+      let d = this.props.data[i];
+              tags.push(<li key = {d.id}><a  data-id={d.id} onClick={function(e){
+                
+                this.props.onClick(e.target.dataset.id)
+              }.bind(this)} href="#">{d.title}</a></li>)
+              
+    }
     return (
       <div>
         <nav>
           <ol>
-            <li>
-              <a href="html.html">Html</a>
-            </li>
-            <li>
-              <a href="css.html">CSS</a>
-            </li>
-            <li>
-              <a href="Javascript.html">Javascript</a>
-            </li>
+            {tags}  
           </ol>
         </nav>
       </div>
