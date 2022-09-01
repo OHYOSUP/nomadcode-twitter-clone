@@ -1,0 +1,131 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.bi-house-fill {
+  font-size: 2vw;
+  color: #333;
+}
+
+.bi-box-arrow-in-left {
+  font-size: 1.5vw;
+  color: #333;
+}
+
+.bi-basket2 {
+  font-size: 1.2vw;
+  color: #333;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+}
+body > nav {
+  height: 7vh;
+  background-color: #333;
+}
+body > nav > ul {
+  width: 100vw;
+  height: 7vh;
+  list-style-type: none;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+body > nav > ul > li {
+  width: 324px;
+  height: 7vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+body > nav > ul > li > a:-webkit-any-link {
+  text-decoration: none;
+  color: #fff;
+}
+body > nav > ul > li > a:-moz-any-link {
+  text-decoration: none;
+  color: #fff;
+}
+body > nav > ul > li > a:any-link {
+  text-decoration: none;
+  color: #fff;
+}
+body > header {
+  height: 120px;
+  border-bottom: 1px solid #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body > header > div:nth-child(1) {
+  width: 100vw;
+  height: 120px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+body > header > div:nth-child(1) > div:nth-child(1) {
+  width: 20vw;
+  height: 120px;
+  border: 1px solid red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #007aff;
+}
+body > header > div:nth-child(1) > div:nth-child(1) > p {
+  width: 10vw;
+  height: 60px;
+  border: 1px solid blue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 100%;
+  font-weight: 400;
+  cursor: pointer;
+  font-family: Roboto, NotoSansKR, "Noto+Sans", "Malgun Gothic", "ë§‘ì€ ê³ ë”•", arial, sans-serif;
+}
+body > header > div:nth-child(1) > div:nth-child(2) {
+  width: 40vw;
+  height: 120px;
+  border: 1px solid red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body > header > div:nth-child(1) > div:nth-child(2) > input {
+  width: 430px;
+  height: 60px;
+}
+body > header > div:nth-child(2) {
+  width: 50vw;
+  height: 120px;
+  border: 1px solid red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body > header > div:nth-child(2) > ul {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+}
+body > header > div:nth-child(2) > ul > li {
+  width: 80px;
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: 1px solid blue;
+}/*# sourceMappingURL=livart.css.map */
