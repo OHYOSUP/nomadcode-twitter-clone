@@ -6,7 +6,7 @@ const themeDefault = {border: '10px solid red'}
 const themeContext = createContext(themeDefault);
 
 function App() {
-  const theme = useContext(themeContext);
+
   return (
     <themeContext.Provider value={{border: '10px solid blue'}}>
     <div className='root' style={theme}>
