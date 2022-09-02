@@ -1,4 +1,30 @@
-*{margin: 0; padding: 0; box-sizing: border-box;}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+@mixin programs-venue {
+  width: 13vw;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border: 1px solid red;
+}
+@mixin programs-artist {
+  width: 13vw;
+  height: 5vh;
+  @include felxCenter(flex-start, center);
+  border: 1px solid red;
+}
+@mixin programs-date {
+  width: 13vw;
+  height: 12vh;
+  @include felxCenter(flex-start, center);
+  border: 1px solid red;
+}
+@mixin programs-picture {
+  width: 14vw;
+}
 
 @mixin felxCenter($justify, $align) {
   display: flex;
@@ -6,97 +32,304 @@
   align-items: $align;
 }
 
-
-#root{
+#root {
   width: 100%;
   height: 100%;
 
-  &>header{
+  & > header {
     width: 100%;
     height: 9vh;
     border: 1px solid #ccc;
     display: flex;
-    &>div:nth-child(1){
+    & > div:nth-child(1) {
       width: 15vw;
       height: 9vh;
       border: 1px solid red;
       @include felxCenter(space-around, center);
-      &>div:nth-child(1){
+      & > div:nth-child(1) {
         width: 5vw;
         // border: 1px solid blue;
-      @include felxCenter(center, center);
-
+        @include felxCenter(center, center);
       }
-      &>div:nth-child(2){
+      & > div:nth-child(2) {
         width: 10vw;
         // border: 1px solid blue;
         font-size: 12px;
-        &>span:nth-child(1){
+        & > span:nth-child(1) {
           font-weight: 1000;
         }
       }
     }
 
-    .section-banner{
+    .section-banner {
       width: 60vw;
       border: 1px solid red;
       @include felxCenter(flex-end, center);
-      &>ul{
+      & > ul {
         width: 50vw;
         height: 9vh;
         @include felxCenter(center, center);
         border: 1px solid blue;
 
-        &>li{
+        & > li {
           width: 6vw;
           display: flex;
           align-items: center;
           font-family: "RixSGo B";
-          }
         }
       }
-      #header-icons-container{
-        width: 23vw;
+    }
+    #header-icons-container {
+      width: 23vw;
+      height: 9vh;
+      @include felxCenter(flex-end, center);
+      #header-icons-one {
+        width: 10vw;
         height: 9vh;
-        @include felxCenter(flex-end, center);
-        #header-icons-one{
-          width: 10vw;
-          height: 9vh;
-          // border: 1px solid red;
-          @include felxCenter(space-around, center);
-          list-style-type: none;
-          &>li{
-            width: 30px;
-            height: 30px;
-            // border: 1px solid blue;
+        // border: 1px solid red;
+        @include felxCenter(space-around, center);
+        list-style-type: none;
+        & > li {
+          width: 30px;
+          height: 30px;
+          // border: 1px solid blue;
           @include felxCenter(center, center);
           border: 1px solid #777;
           border-top-left-radius: 50%;
           border-top-right-radius: 50%;
           border-bottom-left-radius: 50%;
           border-bottom-right-radius: 50%;
+        }
+      }
+    }
+    #header-icons-two {
+      width: 4vw;
+
+      // border: 1px solid red;
+      list-style-type: none;
+      @include felxCenter(space-around, center);
+      align-items: center;
+
+      & > li {
+        width: 30px;
+        height: 30px;
+        // border: 1px solid red;
+
+        @include felxCenter(center, center);
+      }
+    }
+  }
+
+  #main {
+    width: 100vw;
+    height: 91vh;
+    background-color: #ccc;
+    display: flex;
+    flex-direction: column;
+    #main-slide {
+      width: 25vw;
+      height: 91vh;
+      border: 1px solid red;
+      position: absolute;
+      .poster {
+        width: 25vw;
+        height: 60vh;
+        border: 1px solid red;
+      }
+      #desc {
+        width: 25vw;
+        height: 31vh;
+        background-color: #777;
+        & > div:nth-child(1) {
+          width: 25vw;
+          height: 14vh;
+          border: 1px solid salmon;
+          & > div:nth-child(1) {
+            width: 7vw;
+            height: 7vh;
+            border: 1px solid salmon;
+            @include felxCenter(center, center);
+          }
+          & > div:nth-child(2) {
+            width: 7vw;
+            height: 7vh;
+            border: 1px solid salmon;
+            @include felxCenter(center, center);
+          }
+        }
+        & > div:nth-child(2) {
+          width: 25vw;
+          height: 12vh;
+          // border: 1px solid red;
+          display: flex;
+          & > div:nth-child(1) {
+            width: 12vw;
+            height: 12vh;
+            // border: 1px solid red;
+            @include felxCenter(center, center);
+            flex-direction: column;
+            & > div:nth-child(1) {
+              width: 10vw;
+              height: 4vh;
+              @include felxCenter(flex-start, flex-end);
+              // border: 1px solid blue;
+              margin-left: 40px;
+            }
+            & > div:nth-child(2) {
+              width: 10vw;
+              height: 4vh;
+              @include felxCenter(flex-start, flex-end);
+              margin-left: 40px;
+              // border: 1px solid blue;
+            }
+          }
+          & > div:nth-child(2) {
+            width: 15vw;
+            height: 9vh;
+            @include felxCenter(center, center);
+          }
+        }
+        .main-slide-navi {
+          width: 25vw;
+          height: 4vh;
+          @include felxCenter(center, center);
+          // border: 1px solid red;
+          & > div {
+            width: 5vw;
+            height: 4vh;
+            // border: 1px solid red;
+            @include felxCenter(space-around, center);
           }
         }
       }
-      #header-icons-two{
-        width: 4vw;
-        
-        // border: 1px solid red;
-        list-style-type: none;
-        @include felxCenter(space-around, center);
-        align-items: center;
+    }
+    #programs {
+      width: 100vw;
+      height: 91vh;
+      background-color: #888;
+      display: flex;
+      & > div:nth-child(1) {
+        width: 25vw;
+        height: 91vh;
+      }
+      #programs-container {
+        width: 75vw;
+        display: grid;
+        grid-template-columns: 18.75vw 18.75vw 18.75vw 18.75vw;
 
-        &>li{
-          width: 30px;
-          height:30px;
-        // border: 1px solid red;
-          
+        & > div {
+          // border: 1px solid red;
           @include felxCenter(center, center);
-          
+          flex-direction: column;
+        }
+        & > div:nth-child(1) > div:nth-child(1) {
+          @include programs-venue();
+        }
+        & > div:nth-child(1) > div:nth-child(2) {
+          @include programs-artist();
+        }
+        & > div:nth-child(1) > div:nth-child(3) {
+          @include programs-date();
+        }
+        & > div:nth-child(1) > div:nth-child(4) {
+          @include programs-picture();
+        }
+        & > div:nth-child(2) > div:nth-child(1) {
+          @include programs-venue();
+        }
+        & > div:nth-child(2) > div:nth-child(2) {
+          @include programs-artist();
+        }
+        & > div:nth-child(2) > div:nth-child(3) {
+          @include programs-date();
+        }
+        & > div:nth-child(2) > div:nth-child(4) {
+          @include programs-picture();
+        }
+        & > div:nth-child(3) > div:nth-child(1) {
+          @include programs-venue();
+        }
+        & > div:nth-child(3) > div:nth-child(2) {
+          @include programs-artist();
+        }
+        & > div:nth-child(3) > div:nth-child(3) {
+          @include programs-date();
+        }
+        & > div:nth-child(3) > div:nth-child(4) {
+          @include programs-picture();
+        }
+        & > div:nth-child(3) > div:nth-child(1) {
+          @include programs-venue();
+        }
+        & > div:nth-child(4) > div:nth-child(2) {
+          @include programs-artist();
+        }
+        & > div:nth-child(4) > div:nth-child(3) {
+          @include programs-date();
+        }
+        & > div:nth-child(4) > div:nth-child(4) {
+          @include programs-picture();
+        }
+        & > div:nth-child(4) > div:nth-child(1) {
+          @include programs-venue();
+        }
+      }
+    }
+    #mainsection-navi-button {
+      width: 100vw;
+      height: 10vh;
+      border: 1px solid red;
+      position: relative;
+      bottom: 0;
+      @include felxCenter(center, center);
+      & > div:nth-child(1) {
+        width: 35vw;
+        border: 1px solid blue;
+        display: flex;
+        position: absolute;
+        bottom: 0;
+        right: 20vw;
+        @include felxCenter(center, center);
+        & > div:nth-child(1) {
+          width: 25vw;
+          height: 10vh;
+          // border: 1px solid red;
+          @include felxCenter(center, center);
+          &>div:nth-child(1){
+            width: 5vw;
+            height: 10vh;
+            border: 1px solid red;
+          @include felxCenter(center, center);
+            .left-btn {
+              width: 50px;
+              height: 50px;
+              border: 1px solid #777;
+              border-radius: 50%;
+              @include felxCenter(center, center);
+              & > i {
+                font-size: 40px;
+              }
+            }
+          }
+          &>div:nth-child(2){
+            width: 5vw;
+            height: 10vh;
+            border: 1px solid red;
+          @include felxCenter(center, center);
 
-
-
+            .right-btn {
+              width: 50px;
+              height: 50px;
+              border: 1px solid #777;
+              border-radius: 50%;
+              @include felxCenter(center, center);
+              & > i {
+                font-size: 40px;
+              }
+            }
+          }
         }
       }
     }
   }
+}
