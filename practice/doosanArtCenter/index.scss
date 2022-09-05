@@ -512,23 +512,47 @@
     background-color: #fff;
     display: flex;
     flex-direction: column;
+    position: relative;
     #main-slide {
       width: 25vw;
       height: 91vh;
       // border: 1px solid red;
       position: absolute;
       z-index: 10;
-      .poster {
+      overflow: hidden;
+      
+
+      .poster-container{
+        width: 880px;
+        height: 60vh;
+        position: absolute;
+        display: flex;
+        z-index: 100;
+        // box-shadow: -20px -120px 60px black;
+        overflow: hidden;
+        // border: 1px solid red;
+        .poster {
+          width: 440px;
+          // height: 60vh;
+          // border: 10px solid green;
+          
+          &>img{
+            width: 100%;
+            // border: 1px solid green;
+            // height: 60vh;
+          }
+      }
+
+      }
+      #blank{
         width: 25vw;
         height: 60vh;
-        // border: 1px solid red;
-        z-index: 9;
         box-shadow: -20px -120px 60px black;
-        & > img {
-          position: absolute;
-          width: 100%;
-          // bottom: 20vh
+        // background-color: #ccc;
+        &>img{
+          width: 440px;
         }
+        
       }
       #desc {
         width: 25vw;

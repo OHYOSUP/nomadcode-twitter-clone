@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{margin: 0; padding: 0; box-sizing: border-box;}
+    #root{
+      width: 100vw;
+      height: 100vh;
+      /* background-color: salmon; */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .container{
+      width: 400px;
+      height: 600px;
+      background-color: #ccc;
+
+      position: relative;
+      /* overflow: hidden; */
+    }
+    .section-container{
+      width: 1200px;
+      height: 300px;
+      position: absolute;
+      display: flex;
+      /* left: -200px; */
+      /* border: 5px solid red; */
+
+    }
+    #first>div:nth-child(1){
+      width: 400px;
+      height: 300px;
+      background-color: lightcoral;
+      
+      
+    }
+    #first>div:nth-child(2){
+      width: 400px;
+      height: 300px;
+      background-color: lightcoral;
+    }
+    #second>div:nth-child(1){
+      width: 400px;
+      height: 300px;
+      background-color: rgb(0, 0, 0);
+    }
+    #second>div:nth-child(2){
+      width: 400px;
+      height: 300px;
+      background-color: rgb(0, 0, 0);
+    }
+    #third>div:nth-child(1){
+      width: 400px;
+      height: 300px;
+      background-color: rgb(3, 98, 146);
+    }
+    #third>div:nth-child(2){
+      width: 400px;
+      height: 300px;
+      background-color: rgb(3, 98, 146);
+      
+    }
+  </style>
+</head>
+<body>
+  <div id="root">
+      <div class="container">
+        <div class="section-container">
+          <div id="first" class="section">
+            <div>1</div>
+            <div></div>
+          </div>
+          <div id="second" class="section">
+            <div>2</div>
+            <div></div>
+          </div>
+        </div>
+    </div>
+  </div>
+
+  <script>
+
+    const sectionContainer = document.querySelector('.section-container');
+    const sections = document.querySelectorAll('.section');
+    
+    
+    
+    let slideIndex = sections.length-1;
+    let slideWidth = sections[0].clientWidth;
+    let currIndex = 0;
+
+    // console.log(slideIndex);
+
+
+
+function timer(){
+
+  if(currIndex < slideIndex){
+    currIndex++
+    sectionContainer.style.left = -(currIndex*slideWidth) + 'px'
+    sectionContainer.style.transition = '0.3s'
+  }else{
+    currIndex = 0;
+    sectionContainer.style.left = -(currIndex*slideWidth) + 'px'
+    sectionContainer.style.transition = '0.3s'
+
+
+  }
+  
+}
+
+setInterval(timer,3000);
+
+
+
+
+
+  </script>
+</body>
+</html>
