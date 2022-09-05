@@ -570,7 +570,7 @@
 }
 #root #main #main-slide #desc .main-slide-navi {
   width: 25vw;
-  height: 5vh;
+  height: 6vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -592,6 +592,9 @@
 }
 #root #main #main-slide #desc .main-slide-navi > div > div > i {
   font-size: 10px;
+}
+#root #main #main-slide #desc .active {
+  background-color: #000;
 }
 #root #main #programs {
   width: 100vw;

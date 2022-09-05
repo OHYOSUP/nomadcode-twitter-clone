@@ -638,7 +638,7 @@
         }
         .main-slide-navi {
           width: 25vw;
-          height: 5vh;
+          height: 6vh;
           @include felxCenter(center, center);
           background-color: #fff;
           z-index: 10;
@@ -659,6 +659,9 @@
               }
             }
           }
+        }
+        .active{
+          background-color: #000;
         }
       }
     }

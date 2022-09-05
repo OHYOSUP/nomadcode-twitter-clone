@@ -7,6 +7,7 @@ const container = document.querySelector(".container");
 const btns = document.querySelectorAll(".btn");
 const btnContainer = document.querySelector(".btnContainer");
 
+const naviCircle = document.querySelectorAll('#slide-navi');
 
 
 // for(let i = 0; i< hambergerIcon.length; i++){
@@ -16,4 +17,6 @@ const btnContainer = document.querySelector(".btnContainer");
 container.addEventListener("click", hambergerBtnAnim);
 // }
 
-setInterval(timer,1000);
+setInterval(timer,2000);
+
+console.log(naviCircle[0].dataset.nav);

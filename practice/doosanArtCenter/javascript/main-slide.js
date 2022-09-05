@@ -1,5 +1,7 @@
 const sectionContainer = document.querySelector(".poster-container");
 const sections = document.querySelectorAll(".poster");
+const naviCircle = document.querySelectorAll('#slide-navi');
+
 
 let slideIndex = sections.length - 1;
 let slideWidth = sections[0].clientWidth;
@@ -10,6 +12,8 @@ export default function timer() {
     currIndex++;
     sectionContainer.style.left = -(currIndex * (slideWidth+4)) + "px";
     sectionContainer.style.transition = '0.3s';
+    
+    
 
   } else {
     currIndex = 0;
@@ -17,3 +21,6 @@ export default function timer() {
     sectionContainer.style.transition = '0.3s';
   }
 }
+
+
+// console.log(naviCircle);
