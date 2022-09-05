@@ -36,13 +36,14 @@
   font-family: "RixSGo M", "맑은고딕", "MalgunGothic", "돋움", Dotum, sans-serif;
 }
 
-@mixin fontFamilyFooter{
-  font-family: 'RixSGo M';
+@mixin fontFamilyFooter {
+  font-family: "RixSGo M";
   font-size: 11px;
 }
 #root {
   width: 100vw;
   height: 100vh;
+  overflow: hidden;
 
   #dropdownMenu {
     width: 100vw;
@@ -124,7 +125,7 @@
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
         @include fontFamily();
-        
+
         // border: 1px solid red;
       }
 
@@ -145,8 +146,6 @@
           & > div:nth-child(1) {
             font-weight: 590;
             font-size: 18px;
-            
-            
           }
           & > ul {
             list-style: none;
@@ -277,7 +276,7 @@
         width: 100vw;
         height: 6vh;
         @include felxCenter(flex-start, flex-start);
-       border-top: 1px solid #ccc;
+        border-top: 1px solid #ccc;
 
         & > div:nth-child(1) {
           width: 58vw;
@@ -320,7 +319,6 @@
             // border: 1px solid blue;
             display: flex;
             align-items: center;
-            
           }
           & > div:nth-child(2) {
             width: 42vw;
@@ -339,51 +337,49 @@
             line-height: 20px;
           }
         }
-        .dropdown-footer-container-two{
+        .dropdown-footer-container-two {
           width: 40vw;
           height: 25vh;
           // border: 1px solid blue;
-          &>div:nth-child(1){
+          & > div:nth-child(1) {
             width: 20vw;
             height: 12.5vh;
             // border: 1px solid red;
             @include felxCenter(flex-end, flex-end);
             text-align: left;
             flex-direction: column;
-            &>div:nth-child(1){
+            & > div:nth-child(1) {
               width: 11vw;
               height: 5vh;
               // border: 1px solid blue;
               @include fontFamilyFooter();
             }
-            &>div:nth-child(2){
+            & > div:nth-child(2) {
               width: 11vw;
               height: 5vh;
               // border: 1px solid blue;
               @include fontFamilyFooter();
             }
-            
           }
-          &>div:nth-child(2){
+          & > div:nth-child(2) {
             width: 20vw;
             height: 12.5vh;
             // border: 1px solid red;
             @include felxCenter(center, flex-end);
             text-align: left;
             flex-direction: column;
-            &>div:nth-child(1){
+            & > div:nth-child(1) {
               width: 11vw;
               height: 5vh;
               // border: 1px solid blue;
               @include fontFamilyFooter();
             }
-            &>div:nth-child(2){
+            & > div:nth-child(2) {
               width: 11vw;
               height: 5vh;
               // border: 1px solid blue;
               @include fontFamilyFooter();
             }
-            
           }
         }
       }
@@ -497,7 +493,6 @@
 
     #header-icons-two {
       width: 7vw;
-
       // border: 1px solid red;
       list-style-type: none;
       @include felxCenter(center, center);
@@ -505,9 +500,7 @@
 
       & > li {
         width: 2.5vw;
-
         // border: 1px solid red;
-
         @include felxCenter(center, center);
       }
     }
@@ -516,63 +509,97 @@
   #main {
     width: 100vw;
     height: 91vh;
-    background-color: #ccc;
+    background-color: #fff;
     display: flex;
     flex-direction: column;
     #main-slide {
       width: 25vw;
       height: 91vh;
-      border: 1px solid red;
+      // border: 1px solid red;
       position: absolute;
+      z-index: 10;
       .poster {
         width: 25vw;
         height: 60vh;
-        border: 1px solid red;
+        // border: 1px solid red;
+        z-index: 9;
+        box-shadow: -20px -120px 60px black;
+        & > img {
+          position: absolute;
+          width: 100%;
+          // bottom: 20vh
+        }
       }
       #desc {
         width: 25vw;
-        height: 31vh;
+        height: 30vh;
         background-color: #777;
+        position: relative;
+        z-index: 8;
+        box-shadow: -20px 120px 60px black;
+
+        @include fontFamily();
         & > div:nth-child(1) {
           width: 25vw;
-          height: 14vh;
-          border: 1px solid salmon;
+          height: 10vh;
+          background-color: #fff;
+          z-index: 10;
+          // border: 1px solid salmon;
+
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
           & > div:nth-child(1) {
             width: 7vw;
-            height: 7vh;
-            border: 1px solid salmon;
-            @include felxCenter(center, center);
+            height: 5vh;
+            // @include felxCenter(center, center);
+            font-size: 12px;
+            // border: 1px solid salmon;
+            display: flex;
+            align-items: center;
+            margin-left: 25px;
           }
           & > div:nth-child(2) {
-            width: 7vw;
-            height: 7vh;
-            border: 1px solid salmon;
-            @include felxCenter(center, center);
+            width: 10vw;
+            height: 2vh;
+            // border: 1px solid salmon;
+            display: flex;
+            align-items: center;
+            margin-left: 25px;
+            font-size: 24px;
+            font-weight: 600;
           }
         }
         & > div:nth-child(2) {
           width: 25vw;
-          height: 12vh;
+          height: 15vh;
           // border: 1px solid red;
+          background-color: #fff;
+          z-index: 10;
+
           display: flex;
           & > div:nth-child(1) {
-            width: 12vw;
+            width: 11vw;
             height: 12vh;
             // border: 1px solid red;
             @include felxCenter(center, center);
             flex-direction: column;
             & > div:nth-child(1) {
               width: 10vw;
-              height: 4vh;
+              height: 2vh;
               @include felxCenter(flex-start, flex-end);
+              font-size: 12px;
               // border: 1px solid blue;
               margin-left: 40px;
             }
             & > div:nth-child(2) {
               width: 10vw;
-              height: 4vh;
+              height: 3vh;
               @include felxCenter(flex-start, flex-end);
               margin-left: 40px;
+              font-size: 12px;
+              font-weight: 600;
+
               // border: 1px solid blue;
             }
           }
@@ -580,18 +607,33 @@
             width: 15vw;
             height: 9vh;
             @include felxCenter(center, center);
+            // border: 1px solid red;
+            font-size: 14px;
+            @include fontFamily();
           }
         }
         .main-slide-navi {
           width: 25vw;
-          height: 4vh;
+          height: 5vh;
           @include felxCenter(center, center);
+          background-color: #fff;
+          z-index: 10;
           // border: 1px solid red;
           & > div {
-            width: 5vw;
+            width: 4vw;
             height: 4vh;
             // border: 1px solid red;
             @include felxCenter(space-around, center);
+
+            &>div{
+              width: 1vw;
+              // border: 1px solid red;
+            @include felxCenter(center, center);
+
+              &>i{
+                font-size: 10px;
+              }
+            }
           }
         }
       }
@@ -599,7 +641,7 @@
     #programs {
       width: 100vw;
       height: 91vh;
-      background-color: #888;
+      // background-color: #888;
       display: flex;
       & > div:nth-child(1) {
         width: 25vw;
@@ -726,4 +768,3 @@
     }
   }
 }
-
