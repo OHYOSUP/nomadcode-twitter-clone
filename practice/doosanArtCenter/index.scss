@@ -3,6 +3,29 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+.active{
+  background-color: #000;
+}
+
+.one{
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 4px 0 4px 6px;
+  border-color: transparent transparent transparent #000;
+  background: transparent;
+}
+.two{
+  content: '';
+  position: absolute;
+  top: 50%;
+  margin-top: -4px;
+  width: 2px;
+  height: 8px;
+  background: #000;
+}
+
 @mixin programs-venue {
   width: 13vw;
   display: flex;
@@ -387,14 +410,16 @@
   }
   & > header {
     width: 100%;
-    height: 9vh;
+    height: 7vh;
     background-color: #fff;
     display: flex;
     position: relative;
     z-index: 100;
+    // border: 1px solid red;
+
     & > div:nth-child(1) {
       width: 100px;
-      height: 9vh;
+      height: 7vh;
       // border: 1px solid red;
       @include felxCenter(center, center);
 
@@ -402,7 +427,7 @@
 
       .container {
         width: 2.5vw;
-        height: 5vh;
+        height: 3vh;
         @include felxCenter(center, center);
         position: relative;
         z-index: 10;
@@ -410,7 +435,7 @@
 
         .btnContainer {
           width: 5vw;
-          height: 5vh;
+          height: 3vh;
           // border: 1px solid blue;
           // background-color: #ccc;
           @include felxCenter(space-around, center);
@@ -427,14 +452,14 @@
 
     .section-banner {
       width: 70vw;
-      height: 9vh;
+      height: 7vh;
       border-bottom: 1px solid #ccc;
       @include felxCenter(flex-end, center);
       position: relative;
 
       .doosanLogo {
         width: 20vw;
-        height: 9vh;
+        height: 7vh;
         margin-left: 17vw;
         // border: 1px solid blue;
         font-size: 12px;
@@ -447,7 +472,7 @@
 
       & > ul {
         width: 25vw;
-        height: 9vh;
+        height: 7vh;
         @include felxCenter(center, center);
         list-style: none;
         font-weight: 570;
@@ -467,12 +492,12 @@
 
     #header-icons-container {
       width: 32vw;
-      height: 9vh;
+      height: 7vh;
       @include felxCenter(flex-end, center);
       border-bottom: 1px solid #ccc;
       #header-icons-one {
         width: 7vw;
-        height: 9vh;
+        height: 7vh;
         // border: 1px solid red;
         @include felxCenter(space-around, center);
         list-style-type: none;
@@ -556,7 +581,7 @@
       }
       #desc {
         width: 25vw;
-        height: 30vh;
+        height: 20vh;
         background-color: #777;
         position: relative;
         z-index: 8;
@@ -649,19 +674,31 @@
             // border: 1px solid red;
             @include felxCenter(space-around, center);
 
-            &>div{
-              width: 1vw;
-              // border: 1px solid red;
+            #main-slide-navi-handler{
+              width: 1.5vw;
+              height: 1vw;
+              background-color: #999;
+              position: relative;
+              
             @include felxCenter(center, center);
+              
 
-              &>i{
-                font-size: 10px;
-              }
             }
+              .slide-navi{
+                width: 10px;
+                height: 10px ;
+                border: 1px solid black;
+                border-radius: 50%;
+                // background-color: #000;
+            }
+            .slide-navi-two{
+              width: 10px;
+              height: 10px ;
+              border: 1px solid black;
+              border-radius: 50%;
+              // background-color: #000;
           }
-        }
-        .active{
-          background-color: #000;
+          }
         }
       }
     }
@@ -670,19 +707,28 @@
       height: 91vh;
       // background-color: #888;
       display: flex;
+      position: relative;
       & > div:nth-child(1) {
         width: 25vw;
         height: 91vh;
       }
       #programs-container {
-        width: 75vw;
+        width: 112.5vw;
         display: grid;
-        grid-template-columns: 18.75vw 18.75vw 18.75vw 18.75vw;
-
+        grid-template-columns: 18.75vw 18.75vw 18.75vw 18.75vw 18.75vw 18.75vw;
+        position: absolute;
+        left: 25vw;
+        top: 20vh;
         & > div {
           // border: 1px solid red;
           @include felxCenter(center, center);
           flex-direction: column;
+          &>div p{
+            font-size: 12px;
+          }
+          &>span{
+            font: 16px;
+          }
         }
         & > div:nth-child(1) > div:nth-child(1) {
           @include programs-venue();
@@ -735,18 +781,42 @@
         & > div:nth-child(4) > div:nth-child(1) {
           @include programs-venue();
         }
+        & > div:nth-child(5) > div:nth-child(2) {
+          @include programs-artist();
+        }
+        & > div:nth-child(5) > div:nth-child(3) {
+          @include programs-date();
+        }
+        & > div:nth-child(5) > div:nth-child(4) {
+          @include programs-picture();
+        }
+        & > div:nth-child(5) > div:nth-child(1) {
+          @include programs-venue();
+        }
+        & > div:nth-child(6) > div:nth-child(2) {
+          @include programs-artist();
+        }
+        & > div:nth-child(6) > div:nth-child(3) {
+          @include programs-date();
+        }
+        & > div:nth-child(6) > div:nth-child(4) {
+          @include programs-picture();
+        }
+        & > div:nth-child(6) > div:nth-child(1) {
+          @include programs-venue();
+        }
       }
     }
     #mainsection-navi-button {
       width: 100vw;
       height: 10vh;
-      border: 1px solid red;
+      // border: 1px solid red;
       position: relative;
       bottom: 0;
       @include felxCenter(center, center);
       & > div:nth-child(1) {
         width: 35vw;
-        border: 1px solid blue;
+        // border: 1px solid blue;
         display: flex;
         position: absolute;
         bottom: 0;
@@ -759,34 +829,34 @@
           @include felxCenter(center, center);
           & > div:nth-child(1) {
             width: 5vw;
-            height: 10vh;
-            border: 1px solid red;
+            height: 5vh;
+            // border: 1px solid red;
             @include felxCenter(center, center);
             .left-btn {
-              width: 50px;
-              height: 50px;
+              width: 30px;
+              height: 30px;
               border: 1px solid #777;
               border-radius: 50%;
               @include felxCenter(center, center);
               & > i {
-                font-size: 40px;
+                font-size: 20px;
               }
             }
           }
           & > div:nth-child(2) {
             width: 5vw;
-            height: 10vh;
-            border: 1px solid red;
+            height: 5vh;
+            // border: 1px solid red;
             @include felxCenter(center, center);
 
             .right-btn {
-              width: 50px;
-              height: 50px;
+              width: 30px;
+              height: 30px;
               border: 1px solid #777;
               border-radius: 50%;
               @include felxCenter(center, center);
               & > i {
-                font-size: 40px;
+                font-size: 20px;
               }
             }
           }
