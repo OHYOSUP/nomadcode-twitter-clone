@@ -25,7 +25,12 @@
   height: 8px;
   background: #000;
 }
-
+.fade{
+  opacity: 0;
+}
+.fadeIn{
+  opacity: 1;
+}
 @mixin programs-venue {
   width: 13vw;
   display: flex;
@@ -79,6 +84,7 @@
     display: flex;
     align-items: center;
     flex-direction: column;
+    overflow: hidden;
 
     & > div:nth-child(1) {
       width: 90vw;
@@ -551,6 +557,7 @@
         width: 880px;
         height: 60vh;
         position: absolute;
+        
         display: flex;
         z-index: 100;
         // box-shadow: -20px -120px 60px black;
@@ -558,11 +565,15 @@
         // border: 1px solid red;
         .poster {
           width: 440px;
+          // position: absolute;
+          // left: 440px;
+          display: flex;
           // height: 60vh;
-          // border: 10px solid green;
+          // border: 1px solid green;
           
           &>img{
             width: 100%;
+            
             // border: 1px solid green;
             // height: 60vh;
           }
@@ -584,7 +595,7 @@
         height: 20vh;
         background-color: #777;
         position: relative;
-        z-index: 8;
+        z-index: 10;
         box-shadow: -20px 120px 60px black;
 
         @include fontFamily();
@@ -711,6 +722,7 @@
       & > div:nth-child(1) {
         width: 25vw;
         height: 91vh;
+        pointer-events: none;
       }
       #programs-container {
         width: 112.5vw;
@@ -719,8 +731,10 @@
         position: absolute;
         left: 25vw;
         top: 20vh;
+        // border: 1px solid red;
+        pointer-events: none;
+
         & > div {
-          // border: 1px solid red;
           @include felxCenter(center, center);
           flex-direction: column;
           &>div p{

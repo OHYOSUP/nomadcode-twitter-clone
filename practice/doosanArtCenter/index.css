@@ -28,6 +28,14 @@
   background: #000;
 }
 
+.fade {
+  opacity: 0;
+}
+
+.fadeIn {
+  opacity: 1;
+}
+
 #root {
   width: 100vw;
   height: 100vh;
@@ -44,6 +52,7 @@
   display: flex;
   align-items: center;
   flex-direction: column;
+  overflow: hidden;
 }
 #root #dropdownMenu > div:nth-child(1) {
   width: 90vw;
@@ -501,6 +510,7 @@
 }
 #root #main #main-slide .poster-container .poster {
   width: 440px;
+  display: flex;
 }
 #root #main #main-slide .poster-container .poster > img {
   width: 100%;
@@ -518,7 +528,7 @@
   height: 20vh;
   background-color: #777;
   position: relative;
-  z-index: 8;
+  z-index: 10;
   box-shadow: -20px 120px 60px black;
   font-family: "RixSGo M", "맑은고딕", "MalgunGothic", "돋움", Dotum, sans-serif;
 }
@@ -637,6 +647,7 @@
 #root #main #programs > div:nth-child(1) {
   width: 25vw;
   height: 91vh;
+  pointer-events: none;
 }
 #root #main #programs #programs-container {
   width: 112.5vw;
@@ -645,6 +656,7 @@
   position: absolute;
   left: 25vw;
   top: 20vh;
+  pointer-events: none;
 }
 #root #main #programs #programs-container > div {
   display: flex;

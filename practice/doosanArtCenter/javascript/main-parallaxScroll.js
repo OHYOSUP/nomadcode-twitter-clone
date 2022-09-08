@@ -20,7 +20,7 @@ export const rightNavBtn =  function rightNaviBtn(){
 }
 
 export const leftNavBtn = function leftNaviBtn(){
-  console.log(naviBtnContainer);
+  // console.log(naviBtnContainer);
   mainContainer.style.left = `${contentsWidth+110}px`
   mainContainer.style.transition = '0.3s'
 
