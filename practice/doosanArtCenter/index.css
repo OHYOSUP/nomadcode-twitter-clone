@@ -499,6 +499,7 @@
   position: absolute;
   z-index: 10;
   overflow: hidden;
+  box-shadow: 2px -500px 120px rgb(172, 172, 172);
 }
 #root #main #main-slide .poster-container {
   width: 880px;
@@ -518,21 +519,23 @@
 #root #main #main-slide #blank {
   width: 25vw;
   height: 60vh;
-  box-shadow: -20px -120px 60px black;
 }
 #root #main #main-slide #blank > img {
   width: 440px;
 }
-#root #main #main-slide #desc {
-  width: 25vw;
+#root #main #main-slide #descContainer {
+  width: 880px;
   height: 20vh;
-  background-color: #777;
   position: relative;
+}
+#root #main #main-slide #descContainer #descOne {
+  width: 440px;
+  height: 20vh;
+  position: absolute;
   z-index: 10;
-  box-shadow: -20px 120px 60px black;
   font-family: "RixSGo M", "맑은고딕", "MalgunGothic", "돋움", Dotum, sans-serif;
 }
-#root #main #main-slide #desc > div:nth-child(1) {
+#root #main #main-slide #descContainer #descOne > div:nth-child(1) {
   width: 25vw;
   height: 10vh;
   background-color: #fff;
@@ -541,7 +544,7 @@
   flex-direction: column;
   justify-content: center;
 }
-#root #main #main-slide #desc > div:nth-child(1) > div:nth-child(1) {
+#root #main #main-slide #descContainer #descOne > div:nth-child(1) > div:nth-child(1) {
   width: 7vw;
   height: 5vh;
   font-size: 12px;
@@ -549,7 +552,7 @@
   align-items: center;
   margin-left: 25px;
 }
-#root #main #main-slide #desc > div:nth-child(1) > div:nth-child(2) {
+#root #main #main-slide #descContainer #descOne > div:nth-child(1) > div:nth-child(2) {
   width: 10vw;
   height: 2vh;
   display: flex;
@@ -558,14 +561,13 @@
   font-size: 24px;
   font-weight: 600;
 }
-#root #main #main-slide #desc > div:nth-child(2) {
+#root #main #main-slide #descContainer #descOne > div:nth-child(2) {
   width: 25vw;
-  height: 15vh;
-  background-color: #fff;
+  height: 10vh;
   z-index: 10;
   display: flex;
 }
-#root #main #main-slide #desc > div:nth-child(2) > div:nth-child(1) {
+#root #main #main-slide #descContainer #descOne > div:nth-child(2) > div:nth-child(1) {
   width: 11vw;
   height: 12vh;
   display: flex;
@@ -573,7 +575,7 @@
   align-items: center;
   flex-direction: column;
 }
-#root #main #main-slide #desc > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) {
+#root #main #main-slide #descContainer #descOne > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) {
   width: 10vw;
   height: 2vh;
   display: flex;
@@ -582,7 +584,7 @@
   font-size: 12px;
   margin-left: 40px;
 }
-#root #main #main-slide #desc > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) {
+#root #main #main-slide #descContainer #descOne > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) {
   width: 10vw;
   height: 3vh;
   display: flex;
@@ -592,7 +594,7 @@
   font-size: 12px;
   font-weight: 600;
 }
-#root #main #main-slide #desc > div:nth-child(2) > div:nth-child(2) {
+#root #main #main-slide #descContainer #descOne > div:nth-child(2) > div:nth-child(2) {
   width: 15vw;
   height: 9vh;
   display: flex;
@@ -601,23 +603,100 @@
   font-size: 14px;
   font-family: "RixSGo M", "맑은고딕", "MalgunGothic", "돋움", Dotum, sans-serif;
 }
-#root #main #main-slide #desc .main-slide-navi {
+#root #main #main-slide #descContainer #descTwo {
+  width: 440px;
+  height: 20vh;
+  background-color: #777;
+  position: absolute;
+  z-index: 10;
+  left: 25vw;
+  font-family: "RixSGo M", "맑은고딕", "MalgunGothic", "돋움", Dotum, sans-serif;
+}
+#root #main #main-slide #descContainer #descTwo > div:nth-child(1) {
   width: 25vw;
-  height: 6vh;
+  height: 10vh;
+  background-color: #fff;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#root #main #main-slide #descContainer #descTwo > div:nth-child(1) > div:nth-child(1) {
+  width: 7vw;
+  height: 5vh;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  margin-left: 25px;
+}
+#root #main #main-slide #descContainer #descTwo > div:nth-child(1) > div:nth-child(2) {
+  width: 10vw;
+  height: 2vh;
+  display: flex;
+  align-items: center;
+  margin-left: 25px;
+  font-size: 24px;
+  font-weight: 600;
+}
+#root #main #main-slide #descContainer #descTwo > div:nth-child(2) {
+  width: 25vw;
+  height: 10vh;
+  background-color: #fff;
+  z-index: 10;
+  display: flex;
+}
+#root #main #main-slide #descContainer #descTwo > div:nth-child(2) > div:nth-child(1) {
+  width: 11vw;
+  height: 12vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #fff;
+  flex-direction: column;
+}
+#root #main #main-slide #descContainer #descTwo > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) {
+  width: 10vw;
+  height: 2vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  font-size: 12px;
+  margin-left: 40px;
+}
+#root #main #main-slide #descContainer #descTwo > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) {
+  width: 10vw;
+  height: 3vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  margin-left: 40px;
+  font-size: 12px;
+  font-weight: 600;
+}
+#root #main #main-slide #descContainer #descTwo > div:nth-child(2) > div:nth-child(2) {
+  width: 15vw;
+  height: 9vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  font-family: "RixSGo M", "맑은고딕", "MalgunGothic", "돋움", Dotum, sans-serif;
+}
+#root #main #main-slide .main-slide-navi {
+  width: 25vw;
+  height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   z-index: 10;
 }
-#root #main #main-slide #desc .main-slide-navi > div {
+#root #main #main-slide .main-slide-navi > div {
   width: 4vw;
   height: 4vh;
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
-#root #main #main-slide #desc .main-slide-navi > div #main-slide-navi-handler {
+#root #main #main-slide .main-slide-navi > div #main-slide-navi-handler {
   width: 1.5vw;
   height: 1vw;
   background-color: #999;
@@ -626,13 +705,7 @@
   justify-content: center;
   align-items: center;
 }
-#root #main #main-slide #desc .main-slide-navi > div .slide-navi {
-  width: 10px;
-  height: 10px;
-  border: 1px solid black;
-  border-radius: 50%;
-}
-#root #main #main-slide #desc .main-slide-navi > div .slide-navi-two {
+#root #main #main-slide .main-slide-navi > div #slidenavi {
   width: 10px;
   height: 10px;
   border: 1px solid black;

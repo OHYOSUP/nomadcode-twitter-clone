@@ -85,6 +85,8 @@ window.addEventListener("mouseup", () => {
   pressed = false
 })
 
+
+
 slider.addEventListener("mousemove", e => {
   if (!pressed) return
   e.preventDefault()
@@ -93,6 +95,9 @@ slider.addEventListener("mousemove", e => {
   innerSlider.style.left = `${x - startx}px`
   checkboundary()
 })
+
+
+
 
 function checkboundary() {
   let outer = slider.getBoundingClientRect()
