@@ -30,8 +30,9 @@ const desc = document.querySelectorAll('.desc');
 const descContainer = document.getElementById('descContainer')
 
 onloadFadeIn();
-
 container.addEventListener("click", dropDown);
+container.addEventListener('click', hambergerBtnAnim);
+
 
 // poster
 let slideIndex = sections.length - 1;

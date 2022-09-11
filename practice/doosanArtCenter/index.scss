@@ -31,6 +31,12 @@
 .fadeIn {
   opacity: 1;
 }
+.banner{
+  cursor: pointer;
+}
+.banner:hover{
+  color: red;
+}
 @mixin programs-venue {
   width: 13vw;
   display: flex;
@@ -504,7 +510,7 @@
       #header-icons-one {
         width: 7vw;
         height: 7vh;
-        // border: 1px solid red;
+        border: 1px solid red;
         @include felxCenter(space-around, center);
         list-style-type: none;
         & > li {
@@ -518,6 +524,9 @@
           border-top-right-radius: 50%;
           border-bottom-left-radius: 50%;
           border-bottom-right-radius: 50%;
+          &>img{
+            width: 10px;
+          }
         }
       }
     }

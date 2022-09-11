@@ -36,6 +36,14 @@
   opacity: 1;
 }
 
+.banner {
+  cursor: pointer;
+}
+
+.banner:hover {
+  color: red;
+}
+
 #root {
   width: 100vw;
   height: 100vh;
@@ -454,6 +462,7 @@
 #root > header #header-icons-container #header-icons-one {
   width: 7vw;
   height: 7vh;
+  border: 1px solid red;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -470,6 +479,9 @@
   border-top-right-radius: 50%;
   border-bottom-left-radius: 50%;
   border-bottom-right-radius: 50%;
+}
+#root > header #header-icons-container #header-icons-one > li > img {
+  width: 10px;
 }
 #root > header #header-icons-two {
   width: 7vw;
