@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        width: 50px;
+        height: 50px;
+        border: 1px solid lightblue;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        z-index: 10;
+        overflow: hidden;
+      }
+
+      .btnContainer {
+        width: 100px;
+        height: 50px;
+        border: 1px solid blue;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        position: absolute;
+        left: 0px;
+        z-index: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="btnContainer">
+        <div>
+          <img
+            class="btn"
+            src="https://www.doosanartcenter.com/images/common/btn-menu.png"
+            alt=""
+          />
+        </div>
+        <div>
+          <img
+            class="btn"
+            src="https://www.doosanartcenter.com/images/common/btn-menu-close.png"
+            alt=""
+          />
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const container = document.querySelector(".container");
+      const btns = document.querySelectorAll(".btn");
+      const btnContainer = document.querySelector(".btnContainer");
+      console.log(btnContainer);
+
+      let isStatus = true;
+
+      container.addEventListener("click", () => {
+        if (isStatus) {
+          btnContainer.style.left = "-50px";
+          btnContainer.style.transition = "0.5s";
+          isStatus = !isStatus;
+        } else {
+          btnContainer.style.left = "0px";
+          btnContainer.style.transition = "0.5s";
+          isStatus = !isStatus;
+        }
+      });
+    </script>
+  </body>
+</html>

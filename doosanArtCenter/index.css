@@ -1,0 +1,964 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.active {
+  background-color: #000;
+}
+
+.one {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 4px 0 4px 6px;
+  border-color: transparent transparent transparent #000;
+  background: transparent;
+}
+
+.two {
+  content: "";
+  position: absolute;
+  top: 50%;
+  margin-top: -4px;
+  width: 2px;
+  height: 8px;
+  background: #000;
+}
+
+.fade {
+  opacity: 0;
+}
+
+.fadeIn {
+  opacity: 1;
+}
+
+.banner {
+  cursor: pointer;
+}
+
+.banner:hover {
+  color: red;
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+#root #dropdownMenu {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  background-color: #fff;
+  top: -100vh;
+  transition: top ease-out 0.3s;
+  z-index: 11;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+}
+#root #dropdownMenu > div:nth-child(1) {
+  width: 90vw;
+  height: 15vh;
+  border-bottom: 1px solid #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+#root #dropdownMenu > div:nth-child(1) > div:nth-child(1) {
+  width: 60vw;
+  height: 15vh;
+  display: flex;
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+}
+#root #dropdownMenu > div:nth-child(1) > div:nth-child(1) .dropDown-header-nav {
+  width: 50vw;
+  height: 10vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+#root #dropdownMenu > div:nth-child(1) > div:nth-child(1) .dropDown-header-nav > li {
+  width: 6vw;
+  height: 5vh;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#root #dropdownMenu > div:nth-child(1) > div:nth-child(1) .dropDown-header-nav > li:nth-child(4) {
+  width: 10vw;
+}
+#root #dropdownMenu > div:nth-child(1) > div:nth-child(2) {
+  width: 40vw;
+  height: 15vh;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+#root #dropdownMenu > div:nth-child(1) > div:nth-child(2) .share-icon {
+  width: 20vw;
+  height: 5vh;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  list-style-type: none;
+}
+#root #dropdownMenu > div:nth-child(1) > div:nth-child(2) .share-icon > li {
+  width: 2vw;
+  height: 5vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#root #dropdownMenu > div:nth-child(1) > div:nth-child(2) .share-icon > li > img {
+  width: 22px;
+  height: 22px;
+}
+#root #dropdownMenu .dropdown-main {
+  width: 85vw;
+  height: 50vh;
+  display: flex;
+}
+#root #dropdownMenu .dropdown-main > div {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  font-family: "RixSGo M", "맑은고딕", "MalgunGothic", "돋움", Dotum, sans-serif;
+}
+#root #dropdownMenu .dropdown-main > div:nth-child(1) {
+  width: 15vw;
+  height: 30vh;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-weight: 590;
+}
+#root #dropdownMenu .dropdown-main > div:nth-child(1) > div {
+  width: 6.25vw;
+  height: 20vh;
+  display: flex;
+  justify-content: center;
+}
+#root #dropdownMenu .dropdown-main > div:nth-child(1) > div > div:nth-child(1) {
+  font-weight: 590;
+  font-size: 18px;
+}
+#root #dropdownMenu .dropdown-main > div:nth-child(1) > div > ul {
+  list-style: none;
+  font-family: "RixSGo M", "맑은고딕", "MalgunGothic", "돋움", Dotum, sans-serif;
+  font-weight: 500;
+}
+#root #dropdownMenu .dropdown-main > div:nth-child(1) > div > ul > li {
+  height: 4vh;
+  font-size: 15px;
+}
+#root #dropdownMenu .dropdown-main > div:nth-child(2) {
+  width: 35vw;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#root #dropdownMenu .dropdown-main > div:nth-child(2) > div {
+  width: 36vw;
+  height: 20vh;
+  display: flex;
+  justify-content: center;
+}
+#root #dropdownMenu .dropdown-main > div:nth-child(2) > div > div:nth-child(1) {
+  width: 10vw;
+  height: 17vh;
+  font-family: "RixSGo M", "맑은고딕", "MalgunGothic", "돋움", Dotum, sans-serif;
+  font-weight: 590;
+  font-size: 18px;
+}
+#root #dropdownMenu .dropdown-main > div:nth-child(2) > div > div:nth-child(2) {
+  width: 13vw;
+  height: 17.5vh;
+}
+#root #dropdownMenu .dropdown-main > div:nth-child(2) > div > div:nth-child(2) > ul {
+  list-style-type: none;
+  line-height: 30px;
+  font-size: 15px;
+  font-family: "RixSGo M", "맑은고딕", "MalgunGothic", "돋움", Dotum, sans-serif;
+}
+#root #dropdownMenu .dropdown-main > div:nth-child(3) {
+  width: 18vw;
+  height: 55vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#root #dropdownMenu .dropdown-main > div:nth-child(3) > div {
+  width: 36vw;
+  height: 22.5vh;
+  display: flex;
+  justify-content: center;
+}
+#root #dropdownMenu .dropdown-main > div:nth-child(3) > div > div:nth-child(1) {
+  width: 8vw;
+  height: 17.5vh;
+  font-family: "RixSGo M", "맑은고딕", "MalgunGothic", "돋움", Dotum, sans-serif;
+  font-weight: 590;
+  font-size: 18px;
+}
+#root #dropdownMenu .dropdown-main > div:nth-child(3) > div > div:nth-child(2) {
+  width: 13vw;
+  height: 17.5vh;
+}
+#root #dropdownMenu .dropdown-main > div:nth-child(3) > div > div:nth-child(2) > ul {
+  list-style-type: none;
+  line-height: 30px;
+  font-size: 15px;
+  font-family: "RixSGo M", "맑은고딕", "MalgunGothic", "돋움", Dotum, sans-serif;
+}
+#root #dropdownMenu .dropdown-main > div:nth-child(4) {
+  width: 22vw;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#root #dropdownMenu .dropdown-main > div:nth-child(4) > div {
+  width: 36vw;
+  height: 20vh;
+  display: flex;
+  justify-content: center;
+}
+#root #dropdownMenu .dropdown-main > div:nth-child(4) > div > div:nth-child(1) {
+  width: 8vw;
+  height: 17.5vh;
+  font-family: "RixSGo M", "맑은고딕", "MalgunGothic", "돋움", Dotum, sans-serif;
+  font-size: 18px;
+  font-weight: 590;
+}
+#root #dropdownMenu .dropdown-main > div:nth-child(4) > div > div:nth-child(2) {
+  width: 13vw;
+  height: 17.5vh;
+}
+#root #dropdownMenu .dropdown-main > div:nth-child(4) > div > div:nth-child(2) > ul {
+  list-style-type: none;
+  line-height: 30px;
+  font-size: 15px;
+  font-family: "RixSGo M", "맑은고딕", "MalgunGothic", "돋움", Dotum, sans-serif;
+}
+#root #dropdownMenu .dropdown-footer {
+  width: 100vw;
+  height: 35vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+}
+#root #dropdownMenu .dropdown-footer .etc-wrap {
+  width: 100vw;
+  height: 6vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  border-top: 1px solid #ccc;
+}
+#root #dropdownMenu .dropdown-footer .etc-wrap > div:nth-child(1) {
+  width: 58vw;
+  height: 6vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#root #dropdownMenu .dropdown-footer .etc-wrap > div:nth-child(1) > ul {
+  font-size: 10px;
+  border-bottom: 1px solid #ccc;
+  display: flex;
+  list-style-type: none;
+  font-family: "RixSGo M", "맑은고딕", "MalgunGothic", "돋움", Dotum, sans-serif;
+}
+#root #dropdownMenu .dropdown-footer .etc-wrap > div:nth-child(1) > ul > li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 6vw;
+  height: 6vh;
+}
+#root #dropdownMenu .dropdown-footer .dropdown-footer-main-container {
+  width: 100vw;
+  height: 45vh;
+  display: flex;
+}
+#root #dropdownMenu .dropdown-footer .dropdown-footer-main-container .dropdown-footer-container-one {
+  width: 63vw;
+  height: 25vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-family: "RixSGo M", "맑은고딕", "MalgunGothic", "돋움", Dotum, sans-serif;
+  font-size: 11px;
+  text-align: left;
+  flex-direction: column;
+}
+#root #dropdownMenu .dropdown-footer .dropdown-footer-main-container .dropdown-footer-container-one > div:nth-child(1) {
+  width: 42vw;
+  height: 7vh;
+  display: flex;
+  align-items: center;
+}
+#root #dropdownMenu .dropdown-footer .dropdown-footer-main-container .dropdown-footer-container-one > div:nth-child(2) {
+  width: 42vw;
+  height: 8vh;
+  display: flex;
+  align-items: center;
+  line-height: 20px;
+}
+#root #dropdownMenu .dropdown-footer .dropdown-footer-main-container .dropdown-footer-container-one > div:nth-child(3) {
+  width: 42vw;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  line-height: 20px;
+}
+#root #dropdownMenu .dropdown-footer .dropdown-footer-main-container .dropdown-footer-container-two {
+  width: 40vw;
+  height: 25vh;
+}
+#root #dropdownMenu .dropdown-footer .dropdown-footer-main-container .dropdown-footer-container-two > div:nth-child(1) {
+  width: 20vw;
+  height: 12.5vh;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  text-align: left;
+  flex-direction: column;
+}
+#root #dropdownMenu .dropdown-footer .dropdown-footer-main-container .dropdown-footer-container-two > div:nth-child(1) > div:nth-child(1) {
+  width: 11vw;
+  height: 5vh;
+  font-family: "RixSGo M";
+  font-size: 11px;
+}
+#root #dropdownMenu .dropdown-footer .dropdown-footer-main-container .dropdown-footer-container-two > div:nth-child(1) > div:nth-child(2) {
+  width: 11vw;
+  height: 5vh;
+  font-family: "RixSGo M";
+  font-size: 11px;
+}
+#root #dropdownMenu .dropdown-footer .dropdown-footer-main-container .dropdown-footer-container-two > div:nth-child(2) {
+  width: 20vw;
+  height: 12.5vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  text-align: left;
+  flex-direction: column;
+}
+#root #dropdownMenu .dropdown-footer .dropdown-footer-main-container .dropdown-footer-container-two > div:nth-child(2) > div:nth-child(1) {
+  width: 11vw;
+  height: 5vh;
+  font-family: "RixSGo M";
+  font-size: 11px;
+}
+#root #dropdownMenu .dropdown-footer .dropdown-footer-main-container .dropdown-footer-container-two > div:nth-child(2) > div:nth-child(2) {
+  width: 11vw;
+  height: 5vh;
+  font-family: "RixSGo M";
+  font-size: 11px;
+}
+#root > header {
+  width: 100%;
+  height: 7vh;
+  background-color: #fff;
+  display: flex;
+  position: relative;
+  z-index: 100;
+}
+#root > header > div:nth-child(1) {
+  width: 100px;
+  height: 7vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+}
+#root > header > div:nth-child(1) .container {
+  width: 2.5vw;
+  height: 3vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 10;
+  overflow: hidden;
+}
+#root > header > div:nth-child(1) .container .btnContainer {
+  width: 5vw;
+  height: 3vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: absolute;
+  left: 0;
+  cursor: pointer;
+  z-index: 20;
+}
+#root > header > div:nth-child(1) .container .btnContainer .btn {
+  z-index: 0;
+}
+#root > header .section-banner {
+  width: 70vw;
+  height: 7vh;
+  border-bottom: 1px solid #ccc;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative;
+}
+#root > header .section-banner .doosanLogo {
+  width: 20vw;
+  height: 7vh;
+  margin-left: 17vw;
+  font-size: 12px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: absolute;
+  left: -15vw;
+}
+#root > header .section-banner > ul {
+  width: 25vw;
+  height: 7vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  font-weight: 570;
+}
+#root > header .section-banner > ul > li {
+  width: 6vw;
+  display: flex;
+  align-items: center;
+  font-family: "RixSGo B";
+}
+#root > header .section-banner > ul > li:nth-child(1) {
+  width: 10vw;
+}
+#root > header #header-icons-container {
+  width: 32vw;
+  height: 7vh;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+}
+#root > header #header-icons-container #header-icons-one {
+  width: 7vw;
+  height: 7vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  list-style-type: none;
+}
+#root > header #header-icons-container #header-icons-one > li {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #777;
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+  border-bottom-left-radius: 50%;
+  border-bottom-right-radius: 50%;
+}
+#root > header #header-icons-container #header-icons-one > li > img {
+  width: 10px;
+}
+#root > header #header-icons-two {
+  width: 7vw;
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-items: center;
+}
+#root > header #header-icons-two > li {
+  width: 2.5vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#root #main {
+  width: 100vw;
+  height: 91vh;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+#root #main #main-slide {
+  width: 25vw;
+  height: 91vh;
+  position: absolute;
+  z-index: 10;
+  overflow: hidden;
+  box-shadow: 2px -500px 120px rgb(172, 172, 172);
+}
+#root #main #main-slide .poster-container {
+  width: 880px;
+  height: 60vh;
+  position: absolute;
+  display: flex;
+  z-index: 100;
+  overflow: hidden;
+}
+#root #main #main-slide .poster-container .poster {
+  width: 440px;
+  display: flex;
+}
+#root #main #main-slide .poster-container .poster > img {
+  width: 100%;
+}
+#root #main #main-slide #blank {
+  width: 25vw;
+  height: 60vh;
+}
+#root #main #main-slide #blank > img {
+  width: 440px;
+}
+#root #main #main-slide #descContainer {
+  width: 880px;
+  height: 20vh;
+  position: relative;
+}
+#root #main #main-slide #descContainer #descOne {
+  width: 440px;
+  height: 20vh;
+  position: absolute;
+  z-index: 10;
+  font-family: "RixSGo M", "맑은고딕", "MalgunGothic", "돋움", Dotum, sans-serif;
+}
+#root #main #main-slide #descContainer #descOne > div:nth-child(1) {
+  width: 25vw;
+  height: 10vh;
+  background-color: #fff;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#root #main #main-slide #descContainer #descOne > div:nth-child(1) > div:nth-child(1) {
+  width: 7vw;
+  height: 5vh;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  margin-left: 25px;
+}
+#root #main #main-slide #descContainer #descOne > div:nth-child(1) > div:nth-child(2) {
+  width: 10vw;
+  height: 2vh;
+  display: flex;
+  align-items: center;
+  margin-left: 25px;
+  font-size: 24px;
+  font-weight: 600;
+}
+#root #main #main-slide #descContainer #descOne > div:nth-child(2) {
+  width: 25vw;
+  height: 10vh;
+  z-index: 10;
+  display: flex;
+}
+#root #main #main-slide #descContainer #descOne > div:nth-child(2) > div:nth-child(1) {
+  width: 11vw;
+  height: 12vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#root #main #main-slide #descContainer #descOne > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) {
+  width: 10vw;
+  height: 2vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  font-size: 12px;
+  margin-left: 40px;
+}
+#root #main #main-slide #descContainer #descOne > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) {
+  width: 10vw;
+  height: 3vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  margin-left: 40px;
+  font-size: 12px;
+  font-weight: 600;
+}
+#root #main #main-slide #descContainer #descOne > div:nth-child(2) > div:nth-child(2) {
+  width: 15vw;
+  height: 9vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  font-family: "RixSGo M", "맑은고딕", "MalgunGothic", "돋움", Dotum, sans-serif;
+}
+#root #main #main-slide #descContainer #descTwo {
+  width: 440px;
+  height: 20vh;
+  background-color: #777;
+  position: absolute;
+  z-index: 10;
+  left: 25vw;
+  font-family: "RixSGo M", "맑은고딕", "MalgunGothic", "돋움", Dotum, sans-serif;
+}
+#root #main #main-slide #descContainer #descTwo > div:nth-child(1) {
+  width: 25vw;
+  height: 10vh;
+  background-color: #fff;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#root #main #main-slide #descContainer #descTwo > div:nth-child(1) > div:nth-child(1) {
+  width: 7vw;
+  height: 5vh;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  margin-left: 25px;
+}
+#root #main #main-slide #descContainer #descTwo > div:nth-child(1) > div:nth-child(2) {
+  width: 10vw;
+  height: 2vh;
+  display: flex;
+  align-items: center;
+  margin-left: 25px;
+  font-size: 24px;
+  font-weight: 600;
+}
+#root #main #main-slide #descContainer #descTwo > div:nth-child(2) {
+  width: 25vw;
+  height: 10vh;
+  background-color: #fff;
+  z-index: 10;
+  display: flex;
+}
+#root #main #main-slide #descContainer #descTwo > div:nth-child(2) > div:nth-child(1) {
+  width: 11vw;
+  height: 12vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#root #main #main-slide #descContainer #descTwo > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) {
+  width: 10vw;
+  height: 2vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  font-size: 12px;
+  margin-left: 40px;
+}
+#root #main #main-slide #descContainer #descTwo > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) {
+  width: 10vw;
+  height: 3vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  margin-left: 40px;
+  font-size: 12px;
+  font-weight: 600;
+}
+#root #main #main-slide #descContainer #descTwo > div:nth-child(2) > div:nth-child(2) {
+  width: 15vw;
+  height: 9vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  font-family: "RixSGo M", "맑은고딕", "MalgunGothic", "돋움", Dotum, sans-serif;
+}
+#root #main #main-slide .main-slide-navi {
+  width: 25vw;
+  height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+#root #main #main-slide .main-slide-navi > div {
+  width: 4vw;
+  height: 4vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+#root #main #main-slide .main-slide-navi > div #main-slide-navi-handler {
+  width: 1.5vw;
+  height: 1vw;
+  background-color: #999;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#root #main #main-slide .main-slide-navi > div #slidenavi {
+  width: 10px;
+  height: 10px;
+  border: 1px solid black;
+  border-radius: 50%;
+}
+#root #main #programs {
+  width: 100vw;
+  height: 91vh;
+  display: flex;
+  position: relative;
+}
+#root #main #programs > div:nth-child(1) {
+  width: 25vw;
+  height: 91vh;
+  pointer-events: none;
+}
+#root #main #programs #programs-container {
+  width: 112.5vw;
+  display: grid;
+  grid-template-columns: 18.75vw 18.75vw 18.75vw 18.75vw 18.75vw 18.75vw;
+  position: absolute;
+  left: 25vw;
+  top: 20vh;
+  pointer-events: none;
+}
+#root #main #programs #programs-container > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#root #main #programs #programs-container > div > div p {
+  font-size: 12px;
+}
+#root #main #programs #programs-container > div > span {
+  font: 16px;
+}
+#root #main #programs #programs-container > div:nth-child(1) > div:nth-child(1) {
+  width: 13vw;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+#root #main #programs #programs-container > div:nth-child(1) > div:nth-child(2) {
+  width: 13vw;
+  height: 5vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+#root #main #programs #programs-container > div:nth-child(1) > div:nth-child(3) {
+  width: 13vw;
+  height: 12vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+#root #main #programs #programs-container > div:nth-child(1) > div:nth-child(4) {
+  width: 14vw;
+}
+#root #main #programs #programs-container > div:nth-child(2) > div:nth-child(1) {
+  width: 13vw;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+#root #main #programs #programs-container > div:nth-child(2) > div:nth-child(2) {
+  width: 13vw;
+  height: 5vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+#root #main #programs #programs-container > div:nth-child(2) > div:nth-child(3) {
+  width: 13vw;
+  height: 12vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+#root #main #programs #programs-container > div:nth-child(2) > div:nth-child(4) {
+  width: 14vw;
+}
+#root #main #programs #programs-container > div:nth-child(3) > div:nth-child(1) {
+  width: 13vw;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+#root #main #programs #programs-container > div:nth-child(3) > div:nth-child(2) {
+  width: 13vw;
+  height: 5vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+#root #main #programs #programs-container > div:nth-child(3) > div:nth-child(3) {
+  width: 13vw;
+  height: 12vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+#root #main #programs #programs-container > div:nth-child(3) > div:nth-child(4) {
+  width: 14vw;
+}
+#root #main #programs #programs-container > div:nth-child(3) > div:nth-child(1) {
+  width: 13vw;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+#root #main #programs #programs-container > div:nth-child(4) > div:nth-child(2) {
+  width: 13vw;
+  height: 5vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+#root #main #programs #programs-container > div:nth-child(4) > div:nth-child(3) {
+  width: 13vw;
+  height: 12vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+#root #main #programs #programs-container > div:nth-child(4) > div:nth-child(4) {
+  width: 14vw;
+}
+#root #main #programs #programs-container > div:nth-child(4) > div:nth-child(1) {
+  width: 13vw;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+#root #main #programs #programs-container > div:nth-child(5) > div:nth-child(2) {
+  width: 13vw;
+  height: 5vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+#root #main #programs #programs-container > div:nth-child(5) > div:nth-child(3) {
+  width: 13vw;
+  height: 12vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+#root #main #programs #programs-container > div:nth-child(5) > div:nth-child(4) {
+  width: 14vw;
+}
+#root #main #programs #programs-container > div:nth-child(5) > div:nth-child(1) {
+  width: 13vw;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+#root #main #programs #programs-container > div:nth-child(6) > div:nth-child(2) {
+  width: 13vw;
+  height: 5vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+#root #main #programs #programs-container > div:nth-child(6) > div:nth-child(3) {
+  width: 13vw;
+  height: 12vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+#root #main #programs #programs-container > div:nth-child(6) > div:nth-child(4) {
+  width: 14vw;
+}
+#root #main #programs #programs-container > div:nth-child(6) > div:nth-child(1) {
+  width: 13vw;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+#root #main #mainsection-navi-button {
+  width: 100vw;
+  height: 10vh;
+  position: relative;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#root #main #mainsection-navi-button > div:nth-child(1) {
+  width: 35vw;
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  right: 20vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#root #main #mainsection-navi-button > div:nth-child(1) > div:nth-child(1) {
+  width: 25vw;
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#root #main #mainsection-navi-button > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) {
+  width: 5vw;
+  height: 5vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#root #main #mainsection-navi-button > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) .left-btn {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #777;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#root #main #mainsection-navi-button > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) .left-btn > i {
+  font-size: 20px;
+}
+#root #main #mainsection-navi-button > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) {
+  width: 5vw;
+  height: 5vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#root #main #mainsection-navi-button > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) .right-btn {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #777;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#root #main #mainsection-navi-button > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) .right-btn > i {
+  font-size: 20px;
+}/*# sourceMappingURL=index.css.map */

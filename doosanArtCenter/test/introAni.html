@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{margin: 0; padding: 0; box-sizing: border-box;}
+
+    #root{
+      width: 100vw;
+      height: 100vh;
+      background-color: #ccc;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+    #root>div{
+      width: 20vw;
+      height: 50vh;
+      background-color: #222;
+      
+    }
+
+    .item{
+      opacity: 0;
+      
+    }
+
+    .fadeIn{
+      opacity: 1;
+    }
+
+  </style>
+</head>
+<body>
+  
+  <div id="root">
+    <div id="item" class="item"></div>
+    <div id="item" class="item"></div>
+    <div id="item" class="item"></div>
+    <div id="item" class="item"></div>
+  </div>
+  <script>
+    const root = document.getElementById('root');
+    const items = document.querySelectorAll('#item');
+    // console.log(items);
+
+
+
+
+
+// function fade(){
+//   items[0].classList.add('fadeIn');
+// }
+
+window.addEventListener('load', ()=>{
+  let i = -1 ;
+  setInterval(function(){
+    i++
+      items[i].classList.add('fadeIn');
+      items[i].style.transition = '0.5s'
+
+    },1000);
+})
+
+// for(let i = 0; i< items.length; i++){
+//   items[i].style.opacity = 1;
+// }
+
+// console.log(items[0]);
+
+
+// function timer(time){
+//   return new Promise(function(resolve){
+//     setTimeout(function(){
+//       resolve(fade);
+//     },time)
+//   })
+// }
+
+// timer(2000).then(function(time){
+//   items[0].classList.add('fadeIn');
+//   return timer(time+1000);
+// }).then(function(time){
+//   items[1].classList.add('fadeIn');
+//   return timer(time+1000);
+// }).then(function(time){
+//   items[2].classList.add('fadeIn');
+//   return timer(time+1000);
+// }).then(function(time){
+//   items[3].classList.add('fadeIn');
+//   return timer(time+1000);
+// })
+
+// async function run(){
+//   console.log('start');
+//   let time = await timer(1000);
+// }
+// run();
+
+
+
+
+// function fade(){
+//   return new Promise(function(resolve){
+//     setTimeout(function(){
+//       resolve(fade);
+//     },)
+//   })
+// }
+
+
+
+
+// fade(500).then(function(time){
+//   items[1].classList.add('fadeIn');
+//   return fade(time+500);
+//   console.log(1);
+// }).then(function(time){
+//   items[2].classList.add('fadeIn');
+//   return fade(time+500);
+//   console.log(2);
+// }).then(function(time){
+//   items[2].classList.add('fadeIn');
+//   return fade(time+500);
+//   console.log(3);
+// })
+
+
+// async function timer(time){
+//   return new Promise(function(resolve){
+//     setTimeout(function(){
+//       resolve(time);
+//     },time)
+//   })
+// }
+
+
+// timer(1000).then(function(time){
+//   console.log('time:'+ time);
+//   return timer(time+1000);
+// }).then(function(time){
+//   console.log('time:'+time);
+//   return timer(time+1000);
+// }).then(function(time){
+//   console.log('time:'+time);
+//   return timer(time+1000);
+// })
+
+
+// async function run(){
+//   let time = await timer(1000);
+//   console.log('time' +time)
+// }
+
+
+// function ani(){
+  
+//     items.forEach(function(el,i){
+//       items[i].classList.add('fadeIn');
+//       items[i].style.transition = '0.3s';
+
+//       console.log(i)
+//       console.log(items[0]);
+//     })
+// }
+// ani();
+
+
+  </script>
+</body>
+</html>

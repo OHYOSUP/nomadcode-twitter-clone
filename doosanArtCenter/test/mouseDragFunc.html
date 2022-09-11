@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      #root {
+        width: 100vw;
+        height: 100vh;
+        background-color: #ccc;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+
+      }
+      #slider{
+        width: 80%;
+        height: 70%;
+        display: flex;
+        left: 10%;
+        top: 10%;
+        justify-content: center;
+        align-items: center;
+        background-color: lightblue;
+        overflow: hidden;
+        position: absolute;
+      }
+      #container {
+        width: 200%;
+        height: 100%;
+        background-color: salmon;
+        position: absolute;
+        top: 0;
+        left: 0;
+        pointer-events: none;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        left: 6vw;
+      }
+
+      #container > div {
+        width: 30vw;
+        height: 70vh;
+        margin-left: 2vw;
+        background-color: antiquewhite;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root">
+      <div id="slider">
+        <div id="container">
+          <div class="slideItems">itmem-1</div>
+          <div class="slideItems">itmem-2</div>
+          <div class="slideItems">itmem-3</div>
+          <div class="slideItems">itmem-4</div>
+          <div class="slideItems">itmem-5</div>
+          <div class="slideItems">itmem-6</div>
+        </div>
+      </div>
+    </div>
+
+
+    <script>
+      const root = document.getElementById("root");
+      const slider = document.getElementById("slider");
+      const container = document.getElementById("container");
+      const slideItems = document.querySelectorAll(".slideItems");
+
+      let pressed = false;
+      let startX
+      let x
+      // console.log(container.offsetLeft);
+
+      slider.addEventListener('mousedown', (e)=>{
+        pressed = true;
+        startX = e.offsetX - container.offsetLeft;
+        container.style.cursor = 'grabbing';
+      })
+      slider.addEventListener('mouseenter', ()=>{
+        container.style.cursor = 'grab';
+      })
+      slider.addEventListener('mouseup', ()=>{
+        container.style.cursor = 'grab';
+      })
+      window.addEventListener('mouseup',()=>{
+        pressed = false;
+      })
+      
+      slider.addEventListener('mousemove',e=>{
+        if(!pressed)
+        return  e.preventDefault();
+          x = e.offsetX;
+
+          console.log(x);
+          container.style.left = `${x-startX}px`
+          limit();
+      })
+
+      function limit(){
+        let outer = slider.getBoundingClientRect();
+        let inner = container.getBoundingClientRect();
+        
+        if(parseInt(container.style.left) > 0){
+          container.style.left = '0px';
+        }else if(inner.right < outer.right){
+          container.style.left = `-${inner.width - outer.width}px`
+        }
+      }
+
+
+      // let startPoint = 0;
+      // let endPoint = 0;
+      // let currIndex = 0
+      // let slideIndex = slideItems.length - 1;
+      // let slideWidth = slideItems[0].clientWidth;
+
+
+      // container.addEventListener("mousedown", (e) => {
+      //   startPoint = e.pageX;
+      //   console.log("mousedown", e.pageX);
+
+      // });
+
+      // container.addEventListener("mouseup", (e) => {
+      //   console.log("mouseup", e.pageX);
+      //   endtPoint = e.pageX;
+      //   console.log("mousedown", e.pageX);
+
+
+      //   if (startPoint < endPoint) {
+      //     currIndex++;
+      //     container.style.left = -(currIndex * slideWidth) + "px";
+      //   }
+      //   if (startPoint > endPoint) {
+      //     currIndex--;
+      //     container.style.left = (currIndex * slideWidth) + "px";
+      //   }
+      // });
+
+
+
+  
+    </script>
+  </body>
+</html>

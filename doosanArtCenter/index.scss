@@ -1,0 +1,970 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.active {
+  background-color: #000;
+}
+
+.one {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 4px 0 4px 6px;
+  border-color: transparent transparent transparent #000;
+  background: transparent;
+}
+.two {
+  content: "";
+  position: absolute;
+  top: 50%;
+  margin-top: -4px;
+  width: 2px;
+  height: 8px;
+  background: #000;
+}
+.fade {
+  opacity: 0;
+}
+.fadeIn {
+  opacity: 1;
+}
+.banner{
+  cursor: pointer;
+}
+.banner:hover{
+  color: red;
+}
+@mixin programs-venue {
+  width: 13vw;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  // border: 1px solid red;
+}
+@mixin programs-artist {
+  width: 13vw;
+  height: 5vh;
+  @include felxCenter(flex-start, center);
+  // border: 1px solid red;
+}
+@mixin programs-date {
+  width: 13vw;
+  height: 12vh;
+  @include felxCenter(flex-start, center);
+  // border: 1px solid red;
+}
+@mixin programs-picture {
+  width: 14vw;
+}
+
+@mixin felxCenter($justify, $align) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin fontFamily() {
+  font-family: "RixSGo M", "맑은고딕", "MalgunGothic", "돋움", Dotum, sans-serif;
+}
+
+@mixin fontFamilyFooter {
+  font-family: "RixSGo M";
+  font-size: 11px;
+}
+#root {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+
+  #dropdownMenu {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    background-color: #fff;
+    top: -100vh;
+    transition: top ease-out 0.3s;
+    z-index: 11;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+
+    & > div:nth-child(1) {
+      width: 90vw;
+      height: 15vh;
+      // background-color: salmon;
+      border-bottom: 1px solid #ccc;
+      @include felxCenter(center, flex-start);
+
+      // flex-direction: column;
+      & > div:nth-child(1) {
+        width: 60vw;
+        height: 15vh;
+        // border: 1px solid blue;
+        display: flex;
+        list-style: none;
+        @include felxCenter(space-around, flex-end);
+
+        .dropDown-header-nav {
+          width: 50vw;
+          height: 10vh;
+          @include felxCenter(flex-start, flex-end);
+          // border: 1px solid red;
+          & > li {
+            width: 6vw;
+            height: 5vh;
+            font-size: 12px;
+            letter-spacing: 0.5px;
+            // border: 1px solid #333;
+            @include felxCenter(center, center);
+          }
+          & > li:nth-child(4) {
+            width: 10vw;
+          }
+        }
+      }
+      & > div:nth-child(2) {
+        width: 40vw;
+        height: 15vh;
+        //  border: 5px solid red;
+        @include felxCenter(flex-end, flex-end);
+
+        .share-icon {
+          width: 20vw;
+          height: 5vh;
+          // border: 1px solid pink;
+          @include felxCenter(flex-end, flex-end);
+          list-style-type: none;
+          & > li {
+            width: 2vw;
+            height: 5vh;
+            @include felxCenter(center, center);
+
+            & > img {
+              width: 22px;
+              height: 22px;
+            }
+          }
+        }
+      }
+    }
+    .dropdown-main {
+      width: 85vw;
+      height: 50vh;
+      display: flex;
+      // border: 1px solid red;
+      & > div {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        @include fontFamily();
+
+        // border: 1px solid red;
+      }
+
+      & > div:nth-child(1) {
+        width: 15vw;
+        height: 30vh;
+        // border: 1px solid blue;
+        @include felxCenter(flex-end, center);
+        font-weight: 590;
+
+        & > div {
+          width: 6.25vw;
+          height: 20vh;
+          // border: 1px solid green;
+          display: flex;
+          justify-content: center;
+
+          & > div:nth-child(1) {
+            font-weight: 590;
+            font-size: 18px;
+          }
+          & > ul {
+            list-style: none;
+            @include fontFamily();
+            font-weight: 500;
+
+            & > li {
+              height: 4vh;
+              font-size: 15px;
+            }
+          }
+        }
+      }
+
+      & > div:nth-child(2) {
+        width: 35vw;
+        height: 50vh;
+        // border: 1px solid blue;
+        @include felxCenter(center, center);
+        flex-direction: column;
+        & > div {
+          width: 36vw;
+          height: 20vh;
+          // border: 1px solid green;
+          display: flex;
+          justify-content: center;
+          & > div:nth-child(1) {
+            width: 10vw;
+            height: 17vh;
+            // border: 1px solid red;
+            @include fontFamily();
+            font-weight: 590;
+            font-size: 18px;
+          }
+          & > div:nth-child(2) {
+            width: 13vw;
+            height: 17.5vh;
+            // border: 1px solid blue;
+
+            & > ul {
+              list-style-type: none;
+              line-height: 30px;
+              font-size: 15px;
+              @include fontFamily();
+            }
+          }
+        }
+      }
+
+      & > div:nth-child(3) {
+        width: 18vw;
+        height: 55vh;
+        // border: 1px solid blue;
+        @include felxCenter(center, center);
+        flex-direction: column;
+        & > div {
+          width: 36vw;
+          height: 22.5vh;
+          // border: 1px solid green;
+          display: flex;
+          justify-content: center;
+          & > div:nth-child(1) {
+            width: 8vw;
+            height: 17.5vh;
+            // border: 1px solid red;
+            @include fontFamily();
+            font-weight: 590;
+            font-size: 18px;
+          }
+          & > div:nth-child(2) {
+            width: 13vw;
+            height: 17.5vh;
+            // border: 1px solid blue;
+
+            & > ul {
+              list-style-type: none;
+              line-height: 30px;
+              font-size: 15px;
+              @include fontFamily();
+            }
+          }
+        }
+      }
+
+      & > div:nth-child(4) {
+        width: 22vw;
+        height: 50vh;
+        // border: 1px solid blue;
+        @include felxCenter(center, center);
+        flex-direction: column;
+        & > div {
+          width: 36vw;
+          height: 20vh;
+          // border: 1px solid green;
+          display: flex;
+          justify-content: center;
+          & > div:nth-child(1) {
+            width: 8vw;
+            height: 17.5vh;
+            // border: 1px solid red;
+            @include fontFamily();
+            font-size: 18px;
+            font-weight: 590;
+          }
+          & > div:nth-child(2) {
+            width: 13vw;
+            height: 17.5vh;
+            // border: 1px solid blue;
+
+            & > ul {
+              list-style-type: none;
+              line-height: 30px;
+              font-size: 15px;
+              @include fontFamily();
+            }
+          }
+        }
+      }
+    }
+
+    .dropdown-footer {
+      width: 100vw;
+      height: 35vh;
+      // background-color: #ccc;
+      @include felxCenter(flex-start, flex-start);
+      flex-direction: column;
+      .etc-wrap {
+        width: 100vw;
+        height: 6vh;
+        @include felxCenter(flex-start, flex-start);
+        border-top: 1px solid #ccc;
+
+        & > div:nth-child(1) {
+          width: 58vw;
+          height: 6vh;
+          // border: 1px solid blue;
+          @include felxCenter(center, center);
+          & > ul {
+            font-size: 10px;
+            // border: 1px solid green;
+            border-bottom: 1px solid #ccc;
+            display: flex;
+            list-style-type: none;
+            @include fontFamily();
+            & > li {
+              @include felxCenter(center, center);
+              width: 6vw;
+              height: 6vh;
+            }
+          }
+        }
+      }
+
+      .dropdown-footer-main-container {
+        width: 100vw;
+        height: 45vh;
+        // background-color: salmon;
+        display: flex;
+        .dropdown-footer-container-one {
+          width: 63vw;
+          height: 25vh;
+          // border: 1px solid red;
+          @include felxCenter(flex-start, center);
+          @include fontFamily();
+          font-size: 11px;
+          text-align: left;
+          flex-direction: column;
+          & > div:nth-child(1) {
+            width: 42vw;
+            height: 7vh;
+            // border: 1px solid blue;
+            display: flex;
+            align-items: center;
+          }
+          & > div:nth-child(2) {
+            width: 42vw;
+            height: 8vh;
+            // border: 1px solid blue;
+            display: flex;
+            align-items: center;
+            line-height: 20px;
+          }
+          & > div:nth-child(3) {
+            width: 42vw;
+            height: 10vh;
+            // border: 1px solid blue;
+            display: flex;
+            align-items: center;
+            line-height: 20px;
+          }
+        }
+        .dropdown-footer-container-two {
+          width: 40vw;
+          height: 25vh;
+          // border: 1px solid blue;
+          & > div:nth-child(1) {
+            width: 20vw;
+            height: 12.5vh;
+            // border: 1px solid red;
+            @include felxCenter(flex-end, flex-end);
+            text-align: left;
+            flex-direction: column;
+            & > div:nth-child(1) {
+              width: 11vw;
+              height: 5vh;
+              // border: 1px solid blue;
+              @include fontFamilyFooter();
+            }
+            & > div:nth-child(2) {
+              width: 11vw;
+              height: 5vh;
+              // border: 1px solid blue;
+              @include fontFamilyFooter();
+            }
+          }
+          & > div:nth-child(2) {
+            width: 20vw;
+            height: 12.5vh;
+            // border: 1px solid red;
+            @include felxCenter(center, flex-end);
+            text-align: left;
+            flex-direction: column;
+            & > div:nth-child(1) {
+              width: 11vw;
+              height: 5vh;
+              // border: 1px solid blue;
+              @include fontFamilyFooter();
+            }
+            & > div:nth-child(2) {
+              width: 11vw;
+              height: 5vh;
+              // border: 1px solid blue;
+              @include fontFamilyFooter();
+            }
+          }
+        }
+      }
+    }
+  }
+  & > header {
+    width: 100%;
+    height: 7vh;
+    background-color: #fff;
+    display: flex;
+    position: relative;
+    z-index: 100;
+    // border: 1px solid red;
+
+    & > div:nth-child(1) {
+      width: 100px;
+      height: 7vh;
+      // border: 1px solid red;
+      @include felxCenter(center, center);
+
+      border-bottom: 1px solid #ccc;
+
+      .container {
+        width: 2.5vw;
+        height: 3vh;
+        @include felxCenter(center, center);
+        position: relative;
+        z-index: 10;
+        overflow: hidden;
+
+        .btnContainer {
+          width: 5vw;
+          height: 3vh;
+          // border: 1px solid blue;
+          // background-color: #ccc;
+          @include felxCenter(space-around, center);
+          position: absolute;
+          left: 0;
+          cursor: pointer;
+          z-index: 20;
+          .btn {
+            z-index: 0;
+          }
+        }
+      }
+    }
+
+    .section-banner {
+      width: 70vw;
+      height: 7vh;
+      border-bottom: 1px solid #ccc;
+      @include felxCenter(flex-end, center);
+      position: relative;
+
+      .doosanLogo {
+        width: 20vw;
+        height: 7vh;
+        margin-left: 17vw;
+        // border: 1px solid blue;
+        font-size: 12px;
+        @include felxCenter(flex-start, center);
+        position: absolute;
+        left: -15vw;
+        // position: absolute;
+        // z-index: 20;
+      }
+
+      & > ul {
+        width: 25vw;
+        height: 7vh;
+        @include felxCenter(center, center);
+        list-style: none;
+        font-weight: 570;
+        // border: 1px solid blue;
+
+        & > li {
+          width: 6vw;
+          display: flex;
+          align-items: center;
+          font-family: "RixSGo B";
+        }
+        & > li:nth-child(1) {
+          width: 10vw;
+        }
+      }
+    }
+
+    #header-icons-container {
+      width: 32vw;
+      height: 7vh;
+      @include felxCenter(flex-end, center);
+      border-bottom: 1px solid #ccc;
+      #header-icons-one {
+        width: 7vw;
+        height: 7vh;
+        // border: 1px solid red;
+        @include felxCenter(space-around, center);
+        list-style-type: none;
+        & > li {
+          width: 30px;
+          height: 30px;
+
+          // border: 1px solid blue;
+          @include felxCenter(center, center);
+          border: 1px solid #777;
+          border-top-left-radius: 50%;
+          border-top-right-radius: 50%;
+          border-bottom-left-radius: 50%;
+          border-bottom-right-radius: 50%;
+          &>img{
+            width: 10px;
+          }
+        }
+      }
+    }
+
+    #header-icons-two {
+      width: 7vw;
+      // border: 1px solid red;
+      list-style-type: none;
+      @include felxCenter(center, center);
+      align-items: center;
+
+      & > li {
+        width: 2.5vw;
+        // border: 1px solid red;
+        @include felxCenter(center, center);
+      }
+    }
+  }
+
+  #main {
+    width: 100vw;
+    height: 91vh;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    #main-slide {
+      width: 25vw;
+      height: 91vh;
+      // border: 1px solid red;
+      position: absolute;
+      z-index: 10;
+      overflow: hidden;
+      box-shadow: 2px -500px 120px rgb(172, 172, 172);
+
+      .poster-container {
+        width: 880px;
+        height: 60vh;
+        position: absolute;
+
+        display: flex;
+        z-index: 100;
+        overflow: hidden;
+        // border: 1px solid red;
+        .poster {
+          width: 440px;
+          // position: absolute;
+          // left: 440px;
+          display: flex;
+          // height: 60vh;
+          // border: 1px solid green;
+
+          & > img {
+            width: 100%;
+
+            // border: 1px solid green;
+            // height: 60vh;
+          }
+        }
+      }
+      #blank {
+        width: 25vw;
+        height: 60vh;
+        // box-shadow: -40px -120px 1200px black;
+        // background-color: #ccc;
+        & > img {
+          width: 440px;
+        }
+      }
+      #descContainer {
+        width: 880px;
+        height: 20vh;
+        position: relative;
+        // border: 1px solid red;
+        #descOne {
+          width: 440px;
+          height: 20vh;
+          // background-color: #777;
+          position: absolute;
+          z-index: 10;
+          // box-shadow: -20px 20px 60px black;
+
+          @include fontFamily();
+          & > div:nth-child(1) {
+            width: 25vw;
+            height: 10vh;
+            background-color: #fff;
+            z-index: 10;
+            // border: 1px solid salmon;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            & > div:nth-child(1) {
+              width: 7vw;
+              height: 5vh;
+              // @include felxCenter(center, center);
+              font-size: 12px;
+              // border: 1px solid salmon;
+              display: flex;
+              align-items: center;
+              margin-left: 25px;
+            }
+            & > div:nth-child(2) {
+              width: 10vw;
+              height: 2vh;
+              // border: 1px solid salmon;
+              display: flex;
+              align-items: center;
+              margin-left: 25px;
+              font-size: 24px;
+              font-weight: 600;
+            }
+          }
+          & > div:nth-child(2) {
+            width: 25vw;
+            height: 10vh;
+            // border: 1px solid red;
+            // background-color: #ccc;
+            z-index: 10;
+
+            display: flex;
+            & > div:nth-child(1) {
+              width: 11vw;
+              height: 12vh;
+              // border: 1px solid red;
+              @include felxCenter(center, center);
+              flex-direction: column;
+              & > div:nth-child(1) {
+                width: 10vw;
+                height: 2vh;
+                @include felxCenter(flex-start, flex-end);
+                font-size: 12px;
+                // border: 1px solid blue;
+                margin-left: 40px;
+              }
+              & > div:nth-child(2) {
+                width: 10vw;
+                height: 3vh;
+                @include felxCenter(flex-start, flex-end);
+                margin-left: 40px;
+                font-size: 12px;
+                font-weight: 600;
+
+                // border: 1px solid blue;
+              }
+            }
+            & > div:nth-child(2) {
+              width: 15vw;
+              height: 9vh;
+              @include felxCenter(center, center);
+              // border: 1px solid red;
+              font-size: 14px;
+              @include fontFamily();
+            }
+          }
+        }
+
+        #descTwo {
+          width: 440px;
+          height: 20vh;
+          background-color: #777;
+          position: absolute;
+          z-index: 10;
+          // box-shadow: -20px 120px 60px black;
+          left: 25vw;
+
+          @include fontFamily();
+          & > div:nth-child(1) {
+            width: 25vw;
+            height: 10vh;
+            background-color: #fff;
+            z-index: 10;
+            // border: 1px solid salmon;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            & > div:nth-child(1) {
+              width: 7vw;
+              height: 5vh;
+              // @include felxCenter(center, center);
+              font-size: 12px;
+              // border: 1px solid salmon;
+              display: flex;
+              align-items: center;
+              margin-left: 25px;
+            }
+            & > div:nth-child(2) {
+              width: 10vw;
+              height: 2vh;
+              // border: 1px solid salmon;
+              display: flex;
+              align-items: center;
+              margin-left: 25px;
+              font-size: 24px;
+              font-weight: 600;
+            }
+          }
+          & > div:nth-child(2) {
+            width: 25vw;
+            height: 10vh;
+            // border: 1px solid red;
+            background-color: #fff;
+            z-index: 10;
+
+            display: flex;
+            & > div:nth-child(1) {
+              width: 11vw;
+              height: 12vh;
+              // border: 1px solid red;
+              @include felxCenter(center, center);
+              flex-direction: column;
+              & > div:nth-child(1) {
+                width: 10vw;
+                height: 2vh;
+                @include felxCenter(flex-start, flex-end);
+                font-size: 12px;
+                // border: 1px solid blue;
+                margin-left: 40px;
+              }
+              & > div:nth-child(2) {
+                width: 10vw;
+                height: 3vh;
+                @include felxCenter(flex-start, flex-end);
+                margin-left: 40px;
+                font-size: 12px;
+                font-weight: 600;
+
+                // border: 1px solid blue;
+              }
+            }
+            & > div:nth-child(2) {
+              width: 15vw;
+              height: 9vh;
+              @include felxCenter(center, center);
+              // border: 1px solid red;
+              font-size: 14px;
+              @include fontFamily();
+            }
+          }
+        }
+      }
+      .main-slide-navi {
+        width: 25vw;
+        height: 20vh;
+        @include felxCenter(center, center);
+        z-index: 10;
+      
+        
+        // border: 1px solid red;
+        & > div {
+          width: 4vw;
+          height: 4vh;
+          // border: 1px solid red;
+          @include felxCenter(space-around, center);
+
+          #main-slide-navi-handler {
+            width: 1.5vw;
+            height: 1vw;
+            background-color: #999;
+            position: relative;
+
+            @include felxCenter(center, center);
+          }
+          #slidenavi{
+            width: 10px;
+            height: 10px;
+            border: 1px solid black;
+            border-radius: 50%;
+          }
+
+        }
+      }
+    }
+    #programs {
+      width: 100vw;
+      height: 91vh;
+      // background-color: #888;
+      display: flex;
+      position: relative;
+      & > div:nth-child(1) {
+        width: 25vw;
+        height: 91vh;
+        pointer-events: none;
+      }
+      #programs-container {
+        width: 112.5vw;
+        display: grid;
+        grid-template-columns: 18.75vw 18.75vw 18.75vw 18.75vw 18.75vw 18.75vw;
+        position: absolute;
+        left: 25vw;
+        top: 20vh;
+        // border: 1px solid red;
+        pointer-events: none;
+
+        & > div {
+          @include felxCenter(center, center);
+          flex-direction: column;
+          & > div p {
+            font-size: 12px;
+          }
+          & > span {
+            font: 16px;
+          }
+        }
+        & > div:nth-child(1) > div:nth-child(1) {
+          @include programs-venue();
+        }
+        & > div:nth-child(1) > div:nth-child(2) {
+          @include programs-artist();
+        }
+        & > div:nth-child(1) > div:nth-child(3) {
+          @include programs-date();
+        }
+        & > div:nth-child(1) > div:nth-child(4) {
+          @include programs-picture();
+        }
+        & > div:nth-child(2) > div:nth-child(1) {
+          @include programs-venue();
+        }
+        & > div:nth-child(2) > div:nth-child(2) {
+          @include programs-artist();
+        }
+        & > div:nth-child(2) > div:nth-child(3) {
+          @include programs-date();
+        }
+        & > div:nth-child(2) > div:nth-child(4) {
+          @include programs-picture();
+        }
+        & > div:nth-child(3) > div:nth-child(1) {
+          @include programs-venue();
+        }
+        & > div:nth-child(3) > div:nth-child(2) {
+          @include programs-artist();
+        }
+        & > div:nth-child(3) > div:nth-child(3) {
+          @include programs-date();
+        }
+        & > div:nth-child(3) > div:nth-child(4) {
+          @include programs-picture();
+        }
+        & > div:nth-child(3) > div:nth-child(1) {
+          @include programs-venue();
+        }
+        & > div:nth-child(4) > div:nth-child(2) {
+          @include programs-artist();
+        }
+        & > div:nth-child(4) > div:nth-child(3) {
+          @include programs-date();
+        }
+        & > div:nth-child(4) > div:nth-child(4) {
+          @include programs-picture();
+        }
+        & > div:nth-child(4) > div:nth-child(1) {
+          @include programs-venue();
+        }
+        & > div:nth-child(5) > div:nth-child(2) {
+          @include programs-artist();
+        }
+        & > div:nth-child(5) > div:nth-child(3) {
+          @include programs-date();
+        }
+        & > div:nth-child(5) > div:nth-child(4) {
+          @include programs-picture();
+        }
+        & > div:nth-child(5) > div:nth-child(1) {
+          @include programs-venue();
+        }
+        & > div:nth-child(6) > div:nth-child(2) {
+          @include programs-artist();
+        }
+        & > div:nth-child(6) > div:nth-child(3) {
+          @include programs-date();
+        }
+        & > div:nth-child(6) > div:nth-child(4) {
+          @include programs-picture();
+        }
+        & > div:nth-child(6) > div:nth-child(1) {
+          @include programs-venue();
+        }
+      }
+    }
+    #mainsection-navi-button {
+      width: 100vw;
+      height: 10vh;
+      // border: 1px solid red;
+      position: relative;
+      bottom: 0;
+      @include felxCenter(center, center);
+      & > div:nth-child(1) {
+        width: 35vw;
+        // border: 1px solid blue;
+        display: flex;
+        position: absolute;
+        bottom: 0;
+        right: 20vw;
+        @include felxCenter(center, center);
+        & > div:nth-child(1) {
+          width: 25vw;
+          height: 10vh;
+          // border: 1px solid red;
+          @include felxCenter(center, center);
+          & > div:nth-child(1) {
+            width: 5vw;
+            height: 5vh;
+            // border: 1px solid red;
+            @include felxCenter(center, center);
+            .left-btn {
+              width: 30px;
+              height: 30px;
+              border: 1px solid #777;
+              border-radius: 50%;
+              @include felxCenter(center, center);
+              & > i {
+                font-size: 20px;
+              }
+            }
+          }
+          & > div:nth-child(2) {
+            width: 5vw;
+            height: 5vh;
+            // border: 1px solid red;
+            @include felxCenter(center, center);
+
+            .right-btn {
+              width: 30px;
+              height: 30px;
+              border: 1px solid #777;
+              border-radius: 50%;
+              @include felxCenter(center, center);
+              & > i {
+                font-size: 20px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
